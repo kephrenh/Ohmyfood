@@ -20,11 +20,19 @@ body ul {
   flex-direction: column;
 }
 .header__logo {
+  width: 375px;
+  height: 63px;
+  padding: 14px 89px 13px 89px;
+  background-color: white;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__logo__img {
   width: 197px;
   height: 36px;
   padding: 0px 19px 0px 16px;
-  background-color: white;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
