@@ -20,11 +20,13 @@ $location-color: #353535;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
-@mixin flex-center {
+@mixin flex-center-row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 // Générales
 * {
@@ -74,8 +76,5 @@ body {
 }
 
 // Main
-.main {
-    @include flex-center;
-    flex-direction: column;
-}
+
 
