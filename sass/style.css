@@ -136,4 +136,19 @@ body ul {
   background: #f6f6f6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   margin: 10px;
+}
+.functioning__steps__btn .fa-mobile-screen-button {
+  width: 13.019px;
+  height: 19.903px;
+  color: #7e7e7e;
+}
+.functioning__steps__btn .fa-list-ul {
+  width: 16px;
+  height: 15.922px;
+  color: #7e7e7e;
+}
+.functioning__steps__btn .fa-store {
+  width: 18px;
+  height: 17.913px;
+  color: #9356dc;
 }/*# sourceMappingURL=style.css.map */

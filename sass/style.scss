@@ -180,6 +180,23 @@ body {
                         @include tertiary-btn;
                         margin: 10px;
 
+                            .fa-mobile-screen-button {
+                                width: 13.019px;
+                                height: 19.903px;
+                                color: $grey-tint;
+                            }
+
+                            .fa-list-ul {
+                                width: 16px;
+                                height: 15.922px;
+                                color: $grey-tint;
+                            }
+
+                            .fa-store {
+                                width: 18px;
+                                height: 17.913px;
+                                color: $primary-color;
+                            }
 
                     }
             }
