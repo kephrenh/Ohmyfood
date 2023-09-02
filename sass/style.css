@@ -116,6 +116,8 @@ body ul {
   width: 24px;
   height: 24px;
   color: white;
+  border: none;
+  border-radius: 50%;
   background: #9356dc;
   font-family: Roboto;
   font-size: 14.182px;
