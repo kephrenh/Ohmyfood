@@ -167,6 +167,10 @@ body {
 
             &__steps {
                 @include flex-center-row;
+
+                    &__num {
+                        @include num-border;
+                    }
             }
     }
 
