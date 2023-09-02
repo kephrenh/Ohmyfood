@@ -45,4 +45,11 @@ body ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
