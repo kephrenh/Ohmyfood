@@ -220,6 +220,7 @@ body {
 .restaurants {
     width: 100%;
     @include flex-direction-column;
+    background-color: #f6f6f6;
 }
 
         
