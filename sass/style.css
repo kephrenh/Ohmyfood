@@ -45,4 +45,17 @@ body ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
