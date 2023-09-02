@@ -69,6 +69,16 @@ $grey-tint: #7e7e7e;
     align-items: center;
 }
 
+@mixin link-basic-att {
+    text-decoration: none;
+    color: black;
+}
+
+@mixin list-basic-att {
+    list-style-type: none;
+    padding: 0px;
+}
+
 // Générales
 * {
     box-sizing: border-box;
