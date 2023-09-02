@@ -49,10 +49,6 @@ body ul {
 
 .main {
   width: 375px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .main__header {
   display: flex;
