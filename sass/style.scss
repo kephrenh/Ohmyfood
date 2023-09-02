@@ -164,6 +164,10 @@ body {
                 font-weight: 700;
                 line-height: normal
             }
+
+            &__steps {
+                @include flex-center-row;
+            }
     }
 
         

@@ -106,4 +106,9 @@ body ul {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+.functioning__steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
