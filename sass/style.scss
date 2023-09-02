@@ -8,7 +8,14 @@ $location-color: #353535;
 @mixin primary-btn {
     width: 218px;
     height: 50px;
-    background-image: linear-gradient($primary-color, $secondary-color);
+    padding: 13px 18.75px 13px 18.75px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    background: linear-gradient($primary-color, $secondary-color);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -87,11 +94,13 @@ body {
         &__header {
             @include flex-center-column;
             background-color: #f6f6f6;
+
+            &__btn {
+                @include primary-btn;
+            }
         }
 
-        &__btn {
-            @include primary-btn;
-        }
+        
 }
 
 
