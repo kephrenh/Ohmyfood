@@ -133,14 +133,18 @@ body {
                         line-height: normal;
                     }
                 }
-
-                
             }
 
         &__header__btn {
             @include primary-btn;
         }
+    }
 
+    // Fonctionnement
+    .functioning {
+        width: 375px;
+        height: 440px;
+        background: white;
     }
 
         
