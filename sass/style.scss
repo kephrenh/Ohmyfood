@@ -177,6 +177,7 @@ body {
 
                     &__btn {
                         @include tertiary-btn;
+                        margin: 10px;
                     }
             }
     }
