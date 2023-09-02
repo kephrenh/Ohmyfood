@@ -61,13 +61,13 @@ body {
             padding: 14px 89px 13px 89px;
             background-color: white;
             box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-            @include flex-center;
+            @include flex-center-row;
 
                 &__img {
                     width: 197px;
                     height: 36px;
                     padding: 0px 19px 0px 16px;
-                    @include flex-center;
+                    @include flex-center-row;
                 }
         }
 
@@ -76,7 +76,7 @@ body {
             height: 50px;
             gap: 17px;
             background-color: $background-grey;
-            @include flex-center;
+            @include flex-center-row;
         }
 }
 
