@@ -137,6 +137,9 @@ body ul {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   margin: 10px 0px 10px 0px;
 }
+.functioning__steps__btn .fa-solid {
+  margin-right: 27px;
+}
 .functioning__steps__btn .fa-mobile-screen-button {
   width: 13.019px;
   height: 19.903px;

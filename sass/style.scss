@@ -180,6 +180,10 @@ body {
                         @include tertiary-btn;
                         margin: 10px 0px 10px 0px;
 
+                            .fa-solid {
+                                margin-right: 27px;
+                            }
+                        
                             .fa-mobile-screen-button {
                                 width: 13.019px;
                                 height: 19.903px;
