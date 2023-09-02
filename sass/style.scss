@@ -155,66 +155,72 @@ body {
         }
     }
 
-    // Fonctionnement
-    .functioning {
-        width: 100%;
-        height: 440px;
-        background: white;
+// Fonctionnement
+.functioning {
+    width: 100%;
+    height: 440px;
+    background: white;
 
-            &__title {
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal
-            }
+        &__title {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal
+        }
 
-            &__steps {
-                @include flex-center-row;
+        &__steps {
+            @include flex-center-row;
 
-                    &__num {
-                        @include num-border;
-                        @include flex-center-row;
-                        position: sticky;
-                    }
+                &__num {
+                    @include num-border;
+                    @include flex-center-row;
+                    position: sticky;
+                }
 
-                    &__btn {
-                        @include tertiary-btn;
-                        @include flex-center-row;
-                        margin: 10px 0px 10px -12px;
+                &__btn {
+                    @include tertiary-btn;
+                    @include flex-center-row;
+                    margin: 10px 0px 10px -12px;
 
-                            .fa-solid {
-                                margin-right: 27px;
-                            }
-                        
-                            .fa-mobile-screen-button {
-                                width: 13.019px;
-                                height: 19.903px;
-                                color: $grey-tint;
-                            }
+                        .fa-solid {
+                            margin-right: 27px;
+                        }
+                    
+                        .fa-mobile-screen-button {
+                            width: 13.019px;
+                            height: 19.903px;
+                            color: $grey-tint;
+                        }
 
-                            .fa-list-ul {
-                                width: 16px;
-                                height: 15.922px;
-                                color: $grey-tint;
-                            }
+                        .fa-list-ul {
+                            width: 16px;
+                            height: 15.922px;
+                            color: $grey-tint;
+                        }
 
-                            .fa-store {
-                                width: 18px;
-                                height: 17.913px;
-                                color: $primary-color;
-                            }
+                        .fa-store {
+                            width: 18px;
+                            height: 17.913px;
+                            color: $primary-color;
+                        }
 
-                            &__txt {
-                                width: 211px;
-                                height: 15.67;
-                                font-size: 16px;
-                                font-weight: 500;
-                                text-align: left;
-                            }
+                        &__txt {
+                            width: 211px;
+                            height: 15.67;
+                            font-size: 16px;
+                            font-weight: 500;
+                            text-align: left;
+                        }
 
-                    }
-            }
-    }
+                }
+        }
+}
+
+// Restaurants
+.restaurants {
+    width: 100%;
+    @include flex-direction-column;
+}
 
         
 
