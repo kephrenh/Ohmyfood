@@ -150,11 +150,13 @@ body ul {
   width: 16px;
   height: 15.922px;
   color: #7e7e7e;
+  margin-right: 40px;
 }
 .functioning__steps__btn .fa-store {
   width: 18px;
   height: 17.913px;
   color: #9356dc;
+  margin-right: 35px;
 }
 .functioning__steps__btn__txt {
   width: 211px;
