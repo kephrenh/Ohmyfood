@@ -174,11 +174,12 @@ body {
                     &__num {
                         @include num-border;
                         @include flex-center-row;
+                        position: sticky;
                     }
 
                     &__btn {
                         @include tertiary-btn;
-                        margin: 10px 0px 10px 0px;
+                        margin: 10px 0px 10px -12px;
 
                             .fa-solid {
                                 margin-right: 27px;
