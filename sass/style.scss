@@ -3,6 +3,7 @@ $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 $background-grey: #eaeaea;
 $location-color: #353535;
+$grey-tint: #7e7e7e;
 
 // Mixins
 @mixin primary-btn {
@@ -178,6 +179,8 @@ body {
                     &__btn {
                         @include tertiary-btn;
                         margin: 10px;
+
+
                     }
             }
     }
