@@ -86,6 +86,7 @@ body {
 
         &__header {
             @include flex-center-column;
+            background-color: #f6f6f6;
         }
 }
 
