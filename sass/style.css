@@ -127,4 +127,12 @@ body ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.functioning__steps__btn {
+  width: 322.486px;
+  height: 72.379px;
+  border: none;
+  border-radius: 20px;
+  background: #f6f6f6;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }/*# sourceMappingURL=style.css.map */
