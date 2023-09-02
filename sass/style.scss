@@ -172,6 +172,7 @@ body {
 
                     &__num {
                         @include num-border;
+                        @include flex-center-row;
                     }
             }
     }

@@ -124,4 +124,7 @@ body ul {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
