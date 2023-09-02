@@ -100,4 +100,10 @@ body ul {
   width: 375px;
   height: 440px;
   background: white;
+}
+.functioning__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }/*# sourceMappingURL=style.css.map */
