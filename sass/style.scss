@@ -82,6 +82,7 @@ body {
 
 // Main
 .main {
+    width: 375px;
     @include flex-center-column;
 
         &__header {
