@@ -178,7 +178,7 @@ body {
 
                     &__btn {
                         @include tertiary-btn;
-                        margin: 10px;
+                        margin: 10px 0px 10px 0px;
 
                             .fa-mobile-screen-button {
                                 width: 13.019px;
