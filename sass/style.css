@@ -162,10 +162,6 @@ body {
 
 .restaurants {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: #f6f6f6;
 }
 .restaurants__cards {
@@ -177,8 +173,9 @@ body {
 }
 .restaurants__cards .card {
   width: 90.667%;
-  height: 251px;
-  border-radius: 15px;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 15px 15px 0px 0px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 .restaurants__cards .card__link {
@@ -198,4 +195,11 @@ body {
   border: 1px solid #99e2d0;
   border-radius: 2px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  margin: 0px 0px -50px 230px;
+  position: sticky;
+}
+.restaurants__cards .card__link__img {
+  width: 100%;
+  height: 231px;
+  border-radius: 15px;
 }/*# sourceMappingURL=style.css.map */
