@@ -88,6 +88,10 @@ body {
             @include flex-center-column;
             background-color: #f6f6f6;
         }
+
+        &__btn {
+            @include primary-btn;
+        }
 }
 
 
