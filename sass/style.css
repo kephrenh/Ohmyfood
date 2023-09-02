@@ -12,13 +12,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 .header__logo {
   width: 100%;
   height: 63px;
   padding: 14px 89px 13px 89px;
   background-color: white;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,12 +50,16 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f6f6f6;
+  width: 100%;
+  height: 287px;
 }
 .main__header__title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 170px;
 }
 .main__header__title__main {
   width: 73.333%;
@@ -65,16 +69,18 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin: 0;
 }
 .main__header__title__sub {
   width: 84%;
   height: 46px;
   color: #353535;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+  margin: 0;
 }
 .main__header__btn {
   width: 218px;
@@ -94,12 +100,18 @@ body {
   width: 100%;
   height: 440px;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .functioning__title {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin: 0;
+  margin: 0px 0px 20px 0px;
+  padding-left: 10px;
 }
 .functioning__steps {
   display: flex;
@@ -163,7 +175,16 @@ body {
 
 .restaurants {
   width: 100%;
+  height: 1300px;
   background-color: #f6f6f6;
+}
+.restaurants__title {
+  margin: 0;
+  padding: 54px 0 0 10px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .restaurants__cards {
   width: 100%;
