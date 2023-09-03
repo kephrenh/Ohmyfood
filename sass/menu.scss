@@ -91,7 +91,7 @@ $light-grey: #f6f6f6;
 }
 
 @mixin card-border {
-    width: 349px;
+    width: 339px;
     height: 69px;
     display: flex;
     align-items: center;
@@ -104,10 +104,6 @@ $light-grey: #f6f6f6;
 // Générales
 body {
     font-family: Roboto;
-}
-
-.card {
-    @include card-border;
 }
 
 // header
@@ -155,20 +151,73 @@ body {
 
 // Menu
 .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    @include flex-center-column;
     gap: 12px;
     background: $light-grey;
+    padding: 0 0 40px 0;
 
         &__title {
-            width: 257px;
+            width: 339px;
             height: 27px;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;
             line-height: normal;
             text-transform: uppercase;
+            @include margin-reset;
+        }
+
+        .cards {
+            @include flex-center-column;
+            gap: 12px;
+
+            .card {
+                @include card-border;
+
+                .link {
+                    width: 100%;
+                    padding: 15px;
+                    @include link-basic-att;
+                    display: flex;
+
+                        .card__title {
+                            width: 95%;
+
+                                &__main {
+                                    height: 21px;
+                                    font-size: 18px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                    @include margin-reset;
+                                }
+
+                                &__sub {
+                                    @include margin-reset;
+                                    height: 19px;
+                                    font-size: 15.043px;
+                                    font-style: normal;
+                                    font-weight: 300;
+                                    line-height: normal;
+                                    padding: 5px 0 0 0;
+                                }
+                        }
+
+                        .card__price {
+                            @include margin-reset;
+                            align-self: flex-end;
+                            color: #353535;
+                            text-align: center;
+                            font-size: 15.043px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                        }
+                }
+            }
+            
+
+                
         }
         
 }
