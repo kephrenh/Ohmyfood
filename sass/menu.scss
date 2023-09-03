@@ -93,6 +93,7 @@ $light-grey: #f6f6f6;
 @mixin card-border {
     width: 349px;
     height: 69px;
+    display: flex;
     align-items: center;
     border-radius: 15.043px;
     background: white;
@@ -103,6 +104,10 @@ $light-grey: #f6f6f6;
 // Générales
 body {
     font-family: Roboto;
+}
+
+.card {
+    @include card-border;
 }
 
 // header
@@ -148,5 +153,11 @@ body {
         }
 }
 
-// starter
-
+// Menu
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background: $light-grey;
+}

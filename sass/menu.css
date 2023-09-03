@@ -2,6 +2,16 @@ body {
   font-family: Roboto;
 }
 
+.card {
+  width: 349px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  border-radius: 15.043px;
+  background: white;
+  box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+}
+
 .header {
   display: flex;
 }
@@ -39,4 +49,12 @@ body {
   font-weight: 400;
   line-height: normal;
   padding: 0 0 0 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f6f6f6;
 }/*# sourceMappingURL=menu.css.map */
