@@ -11,16 +11,169 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
             integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="#" rel="stylesheet">
+        <link href="/sass/menu.css" rel="stylesheet">
     </head>
 
     <body>
         <header class="header">
-            
+            <a href="/index.html">
+                <img src="/assets/images/components/GoBack.svg" alt="GetBack">
+            </a>
+            <div class="header__logo">
+                <img src="/assets/images/logo/ohmyfood@2x.svg" alt="ohmybook logo" class="header__logo__img">            
+            </div>
         </header>
 
-        <main class="main"></main>
+        <main class="main">
+            <section class="main__header">
+                <img src="/assets/images/restaurants/la-note-enchante.jpg" alt="Photo: La note enchantée" class="main__header__img">
+            </section>
 
-        <footer class="footer"></footer>
+            <section class="main__title">
+                <h1 class="main__title__txt">La note enchantée</h1>
+                <div class="main__title__fav">
+                    <img src="/assets/images/components/Status=Default.svg" class="main__title__fav__default"></i>
+                </div>
+            </section>
+
+            <section id="starter" class="menu">
+                <h2 class="menu__title">ENTRÉES</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Raviolis de foie gras</h3>
+                                <p class="card__title__sub">Accompagnées de leur crème à la truffe</p>
+                            </div>
+                            <p class="card__price">25€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Caviar osciètre</h3>
+                                <p class="card__title__sub">Sur blini à la farine de blé noir</p>
+                            </div>
+                            <p class="card__price">35€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Homard et espuma de potiron</h3>
+                                <p class="card__title__sub">Marinés aux zestes d'orange</p>
+                            </div>
+                            <p class="card__price">20€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Foie gras de canard cuit entier</h3>
+                                <p class="card__title__sub">Confiture de figue et pain toasté</p>
+                            </div>
+                            <p class="card__price">35€</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dish" class="menu">
+                <h2 class="menu__title">PLATS</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Noix de coquille Saint-Jacques</h3>
+                                <p class="card__title__sub">Sur lit de purée céleri-rave</p>
+                            </div>
+                            <p class="card__price">40€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Langoustine poêlée</h3>
+                                <p class="card__title__sub">Purée de patate douce</p>
+                            </div>
+                            <p class="card__price">35€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Mijotée de queue de bœuf</h3>
+                                <p class="card__title__sub">Et riz sauvage aux zestes de citron</p>
+                            </div>
+                            <p class="card__price">45€</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dessert" class="menu">
+                <h2 class="menu__title">DESSERTS</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Macaron noisette et chocolat</h3>
+                                <p class="card__title__sub">Glace au caramel brun et sel de Guérande</p>
+                            </div>
+                            <p class="card__price">18€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Baba au rhum revisité</h3>
+                                <p class="card__title__sub">Avec son coulis de citron</p>
+                            </div>
+                            <p class="card__price">22€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Tarte au citron meringuée</h3>
+                                <p class="card__title__sub">Déstructurée</p>
+                            </div>
+                            <p class="card__price">23€</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+            <section class="main__order">
+                <button type="submit" class="main__order__btn">Commander</button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <section class="footer__section">
+                <h1 class="footer__section__title">ohmyfood</h1>
+                <ul class="footer__section__list">
+                    <li><a href="#" class="link">
+                        <img src="/assets/images/components/utensils.svg" class="utensils utensils--white" alt="utensils">
+                        <span class="footer__section__list__txt">Proposer un restaurant</span>
+                    </a></li>
+                    <li><a href="#" class="link">
+                        <img src="/assets/images/components/handshake-angle.svg" class="handshake-angle handshake-angle--white" alt="handshake">
+                        <span class="footer__section__list__txt">Devenir un partenaire</span>
+                    </a></li>
+                    <li><a href="#" class="link">Mentions Légales</a></li>
+                    <li><a href="mailto:email@ohmyfood.com" class="link">Contact</a></li>
+                </ul>
+            </section>
+        </footer>
     </body>
 </html>
