@@ -215,9 +215,68 @@ body {
                         }
                 }
             }
-            
-
-                
         }
         
 }
+
+// Footer
+.footer {
+    width: 100%;
+    display: flex;
+    padding: 22px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: $dark-grey;
+
+        &__section {
+        width: 100%;
+        height: 120px;
+        background-color: $dark-grey;
+
+            &__title {
+                width: 137.582px;
+                height: 27px;
+                color: white;
+                font-family: Shrikhand;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include margin-reset;
+            }
+
+            &__list {
+                @include list-basic-att;
+                    li {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                    .link {
+                        text-decoration: none;
+                        color: white;
+                    }
+
+                    .utensils {
+                        width: 11px;
+                        height: 13px;
+                        margin-right: 10px;
+                    }
+
+                    .handshake-angle {
+                        width: 11.918px;
+                        height: 13px;
+                        margin-right: 10px;
+                    }
+
+                    &__txt {
+                        font-weight: 500;
+                    }
+            }
+    
+          
+    }
+}
+
