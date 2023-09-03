@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport"  content="width=device-width, inital-sclae=1.0">
-        <title>ohmyfood</title>
+        <title>La palette du goût</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
@@ -11,16 +11,159 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
             integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="#" rel="stylesheet">
+        <link href="/sass/menu.css" rel="stylesheet">
     </head>
 
     <body>
         <header class="header">
-            
+            <a href="/index.html">
+                <img src="/assets/images/components/GoBack.svg" alt="GetBack">
+            </a>
+            <div class="header__logo">
+                <img src="/assets/images/logo/ohmyfood@2x.svg" alt="ohmybook logo" class="header__logo__img">            
+            </div>
         </header>
 
-        <main class="main"></main>
+        <main class="main">
+            <section class="main__header">
+                <img src="/assets/images/restaurants/la-palette-du-gout.jpg" alt="Photo: La palette du goût" class="main__header__img">
+            </section>
 
-        <footer class="footer"></footer>
+            <section class="main__title">
+                <h1 class="main__title__txt">La palette du goût</h1>
+                <div class="main__title__fav">
+                    <img src="/assets/images/components/Status=Default.svg" class="main__title__fav__default"></i>
+                </div>
+            </section>
+
+            <section id="starter" class="menu">
+                <h2 class="menu__title">ENTRÉES</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Fricassée d'escargots</h3>
+                                <p class="card__title__sub">Au piment d'Espelette</p>
+                            </div>
+                            <p class="card__price">25€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Foie gras de canard mi-cuit</h3>
+                                <p class="card__title__sub">Et ses copeaux de truffe noire</p>
+                            </div>
+                            <p class="card__price">35€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Œuf au plat</h3>
+                                <p class="card__title__sub">Assaisonné à la truffe sur lit de caviar</p>
+                            </div>
+                            <p class="card__price">20€</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dish" class="menu">
+                <h2 class="menu__title">PLATS</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Filet de bœuf aux herbes</h3>
+                                <p class="card__title__sub">Accompagné de sa ribambelle de légumes</p>
+                            </div>
+                            <p class="card__price">40€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Parmentier de queue de bœeuf</h3>
+                                <p class="card__title__sub">À la truffe noire sur sa purée de panais</p>
+                            </div>
+                            <p class="card__price">35€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Filet de turbot</h3>
+                                <p class="card__title__sub">Aux agrumes</p>
+                            </div>
+                            <p class="card__price">44€</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dessert" class="menu">
+                <h2 class="menu__title">DESSERTS</h2>
+
+                <div class="cards">
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Paris-Brest</h3>
+                                <p class="card__title__sub">Revisité</p>
+                            </div>
+                            <p class="card__price">18€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Macaron au chocolat d'exception</h3>
+                                <p class="card__title__sub">Et glace à la vanille de Madagascar</p>
+                            </div>
+                            <p class="card__price">22€</p>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="#" class="link">
+                            <div class="card__title">
+                                <h3 class="card__title__main">Mousse au chocolat</h3>
+                                <p class="card__title__sub">Au piment d'Espelette et à la truffe noire</p>
+                            </div>
+                            <p class="card__price">23€</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+            <section class="main__order">
+                <button type="submit" class="main__order__btn">Commander</button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <section class="footer__section">
+                <h1 class="footer__section__title">ohmyfood</h1>
+                <ul class="footer__section__list">
+                    <li><a href="#" class="link">
+                        <img src="/assets/images/components/utensils.svg" class="utensils utensils--white" alt="utensils">
+                        <span class="footer__section__list__txt">Proposer un restaurant</span>
+                    </a></li>
+                    <li><a href="#" class="link">
+                        <img src="/assets/images/components/handshake-angle.svg" class="handshake-angle handshake-angle--white" alt="handshake">
+                        <span class="footer__section__list__txt">Devenir un partenaire</span>
+                    </a></li>
+                    <li><a href="#" class="link">Mentions Légales</a></li>
+                    <li><a href="mailto:email@ohmyfood.com" class="link">Contact</a></li>
+                </ul>
+            </section>
+        </footer>
     </body>
 </html>
