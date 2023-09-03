@@ -88,3 +88,8 @@ $dark-grey: #353535;
 @mixin padding-reset {
     padding: 0;
 }
+
+// Générales
+body {
+    font-family: Roboto;
+}
