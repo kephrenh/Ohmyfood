@@ -90,6 +90,16 @@ $light-grey: #f6f6f6;
     padding: 0;
 }
 
+@mixin card-border {
+    width: 349px;
+    height: 69px;
+    align-items: center;
+    border-radius: 15.043px;
+    background: white;
+    box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
+
+}
+
 // Générales
 body {
     font-family: Roboto;
@@ -137,4 +147,6 @@ body {
                 }
         }
 }
+
+// starter
 
