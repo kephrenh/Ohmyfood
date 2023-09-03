@@ -187,6 +187,11 @@ body {
             @include margin-reset;
         }
 
+        &__underline {
+            border-bottom: 3px solid #99e2d0;
+            padding: 0 0 5px 0;
+        }
+
         .cards {
             @include flex-center-column;
             gap: 12px;
