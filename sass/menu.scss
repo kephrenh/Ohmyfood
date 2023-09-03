@@ -109,10 +109,16 @@ body {
 // header
 .header {
     display: flex;
+    margin: 15px 0 15px 0;
 
         &__logo {
-            width: 95%;
+            width: 80%;
             @include flex-center-row;
+
+                &__img {
+                    width: 162px;
+                    height: 36px;
+                }
         }
 }
 
@@ -147,6 +153,17 @@ body {
                     padding: 0 0 0 20px;
                 }
         }
+
+        &__order {
+            background: $light-grey;
+            @include flex-center-row;
+            padding: 0 0 40px 0;
+
+                &__btn {
+                    @include secondary-btn;
+                }
+        }
+        
 }
 
 // Menu
