@@ -160,4 +160,15 @@ body {
     align-items: flex-start;
     gap: 12px;
     background: $light-grey;
+
+        &__title {
+            width: 257px;
+            height: 27px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+        
 }
