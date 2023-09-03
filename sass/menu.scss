@@ -95,4 +95,12 @@ body {
 }
 
 // header
+.header {
+    display: flex;
+
+        &__logo {
+            width: 95%;
+            @include flex-center-row;
+        }
+}
 
