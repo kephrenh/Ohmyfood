@@ -21,10 +21,10 @@
             <div class="header__logo">
                 <img src="./assets/images/logo/ohmyfood@2x.svg" class="header__logo__img">
             </div>
-            <div class="header__location">
+            <form class="header__location" method="get" action="#">
                 <i class="fa-solid fa-location-dot header__location__icon"></i>
-                <p class="header__location__txt">Paris, Belleville</p>
-            </div>
+                <input type="search" id="location" name="location" placeholder="Paris, Belleville" class="header__location__txt">
+            </form>
         </header>
 
         <main class="main">
@@ -97,7 +97,7 @@
                             </a>
                             </div>
                             <div class="card__content__icon">
-                                <img src="./assets/images/components/Status=Liked.svg" class="icon">
+                                <img src="./assets/images/components/Status=Default.svg" class="icon">
                             </div>
                             </div>
                     </article>
@@ -131,7 +131,9 @@
                             </a>
                             </div>
                             <div class="card__content__icon">
-                                <img src="./assets/images/components/Status=Default.svg" class="icon">
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21">
+                                        <path d="M12.7206 2.40551L12.7203 2.40576L11.8739 3.35732L11.5003 3.77727L11.1267 3.35732L10.2802 2.40576L10.2797 2.40514C8.28247 0.152585 5.09737 -0.169649 2.9764 1.80201C0.482212 4.1245 0.344816 8.32357 2.58455 10.8495L10.8987 20.2148C10.8987 20.2149 10.8988 20.2149 10.8988 20.2149C11.237 20.5955 11.7593 20.5955 12.0975 20.2149C12.0975 20.2149 12.0975 20.2149 12.0976 20.2148L20.4119 10.8493L20.412 10.8492C22.6556 8.32335 22.5183 4.12461 20.0243 1.80213L12.7206 2.40551ZM12.7206 2.40551C14.7223 0.15233 17.9032 -0.169452 20.024 1.80187L12.7206 2.40551Z"/>
+                                      </svg>
                             </div>
                             </div>
                     </article>
@@ -141,10 +143,16 @@
 
         <footer class="footer">
             <section class="footer__section">
-                <img src="./assets/images/logo/ohmyfood@2x.svg" alt="logo ohmyfood" class="footer__section__img">
+                <h1 class="footer__section__title">ohmyfood</h1>
                 <ul class="footer__section__list">
-                    <li><a href="#" class="link"><i class="fa-solid fa-utensils"></i><span>Proposer un restaurant</span></a></li>
-                    <li><a href="#" class="link"><i class="fa-solid fa-handshake-angle"></i><span>Devenir un partenaire</span></a></li>
+                    <li><a href="#" class="link">
+                        <img src="./assets/images/components/utensils.svg" class="utensils utensils--white">
+                        <span class="footer__section__list__txt">Proposer un restaurant</span>
+                    </a></li>
+                    <li><a href="#" class="link">
+                        <img src="./assets/images/components/handshake-angle.svg" class="handshake-angle handshake-angle--white">
+                        <span class="footer__section__list__txt">Devenir un partenaire</span>
+                    </a></li>
                     <li><a href="#" class="link">Mentions Légales</a></li>
                     <li><a href="#" class="link">Contact</a></li>
                 </ul>

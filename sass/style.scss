@@ -4,6 +4,7 @@ $tertiary-color: #99e2d0;
 $background-grey: #eaeaea;
 $location-color: #353535;
 $grey-tint: #7e7e7e;
+$dark-grey: #353535;
 
 // Mixins
 @mixin primary-btn {
@@ -92,6 +93,11 @@ $grey-tint: #7e7e7e;
     box-sizing: border-box;
 }
 
+html {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: Roboto;
     @include padding-reset;
@@ -125,6 +131,15 @@ body {
             gap: 17px;
             background-color: $background-grey;
             @include flex-center-row;
+
+                &__txt {
+                    border: none;
+                    background-color: #eaeaea;
+                    width: 109px;
+                    height: 19px;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
         }
 }
 
@@ -324,11 +339,82 @@ body {
                                 &__icon {
                                     display: flex;
                                     align-items: center;
+
+                                        .icon {
+                                            fill: none;
+                                            stroke: #101010;
+                                        }
+
+                                        .icon:hover {
+                                            fill: $primary-color;
+                                            stroke: none;
+                                        }
                                     
                                 }
                         }
                 }
         }
+}
+
+// Footer
+.footer {
+    width: 100%;
+    display: flex;
+    padding: 22px 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: $dark-grey;
+
+        &__section {
+        width: 100%;
+        height: 120px;
+        background-color: $dark-grey;
+
+            &__title {
+                width: 137.582px;
+                height: 27px;
+                color: white;
+                font-family: Shrikhand;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include margin-reset;
+            }
+
+            &__list {
+                @include list-basic-att;
+                    li {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                    .link {
+                        text-decoration: none;
+                        color: white;
+                    }
+
+                    .utensils {
+                        width: 11px;
+                        height: 13px;
+                        margin-right: 10px;
+                    }
+
+                    .handshake-angle {
+                        width: 11.918px;
+                        height: 13px;
+                        margin-right: 10px;
+                    }
+
+                    &__txt {
+                        font-weight: 500;
+                    }
+            }
+    
+          
+    }
 }
 
         
