@@ -123,12 +123,16 @@ body {
 }
 .menu .cards .card .link .card__title__sub {
   margin: 0;
+  width: 280px;
   height: 19px;
-  font-size: 15.043px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   padding: 5px 0 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu .cards .card .link .card__price {
   margin: 0;
@@ -139,6 +143,7 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin: 0 5px 0 5px;
 }
 
 .footer {
