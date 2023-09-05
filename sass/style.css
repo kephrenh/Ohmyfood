@@ -125,6 +125,13 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+@media (min-width: 1080px) {
+  .functioning__steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
 .functioning__steps__step {
   display: flex;
   align-items: center;

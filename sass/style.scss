@@ -206,6 +206,11 @@ body {
         &__steps {
             display: flex;
             flex-wrap: wrap;
+            @media (min-width: 1080px) {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
 
                 &__step {
                     display: flex;
