@@ -47,7 +47,7 @@ body {
   padding: 0 0 0 20px;
 }
 .main__order {
-  width: 100%;
+  width: 375px;
   background: #f6f6f6;
   display: flex;
   justify-content: center;

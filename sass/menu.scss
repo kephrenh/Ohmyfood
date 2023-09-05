@@ -156,7 +156,7 @@ body {
         }
 
         &__order {
-            width: 100%;
+            width: 375px;
             background: $light-grey;
             @include flex-center-row;
             padding: 0 0 40px 0;
