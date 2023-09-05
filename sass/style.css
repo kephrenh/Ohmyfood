@@ -123,10 +123,13 @@ body {
 }
 .functioning__steps {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+}
+.functioning__steps__step {
+  display: flex;
   align-items: center;
 }
-.functioning__steps__num {
+.functioning__steps__step__num {
   width: 24px;
   height: 24px;
   color: white;
@@ -143,7 +146,7 @@ body {
   align-items: center;
   position: sticky;
 }
-.functioning__steps__btn {
+.functioning__steps__step__btn {
   width: 322.486px;
   height: 72.379px;
   border: none;
@@ -155,25 +158,25 @@ body {
   align-items: center;
   margin: 10px 0px 10px -12px;
 }
-.functioning__steps__btn .fa-solid {
+.functioning__steps__step__btn .fa-solid {
   margin-right: 27px;
 }
-.functioning__steps__btn .fa-mobile-screen-button {
+.functioning__steps__step__btn .fa-mobile-screen-button {
   width: 13.019px;
   height: 19.903px;
   color: #7e7e7e;
 }
-.functioning__steps__btn .fa-list-ul {
+.functioning__steps__step__btn .fa-list-ul {
   width: 16px;
   height: 15.922px;
   color: #7e7e7e;
 }
-.functioning__steps__btn .fa-store {
+.functioning__steps__step__btn .fa-store {
   width: 18px;
   height: 17.913px;
   color: #9356dc;
 }
-.functioning__steps__btn__txt {
+.functioning__steps__step__btn__txt {
   width: 211px;
   height: 15.67;
   font-size: 16px;
@@ -219,8 +222,7 @@ body {
   text-decoration: none;
   color: black;
   width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 200px;
 }
 .restaurants__cards .card__link__tag {
   width: 88px;
@@ -241,6 +243,8 @@ body {
 .restaurants__cards .card__link__img {
   width: 100%;
   height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
 }
 .restaurants__cards .card__content {
@@ -252,7 +256,11 @@ body {
   align-items: center;
   padding: 0px 0px 10px 13px;
 }
-.restaurants__cards .card__content__txt__name {
+.restaurants__cards .card__content__txt__link {
+  text-decoration: none;
+  color: black;
+}
+.restaurants__cards .card__content__txt__link__name {
   margin: 0;
   margin: 10px 0 5px 0;
   color: #000;
@@ -261,7 +269,7 @@ body {
   font-weight: 700;
   line-height: normal;
 }
-.restaurants__cards .card__content__txt__location {
+.restaurants__cards .card__content__txt__link__location {
   margin: 0;
   color: #000;
   font-size: 17px;

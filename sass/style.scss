@@ -204,50 +204,58 @@ body {
         }
 
         &__steps {
-            @include flex-center-row;
+            display: flex;
+            flex-wrap: wrap;
 
-                &__num {
-                    @include num-border;
-                    @include flex-center-row;
-                    position: sticky;
+                &__step {
+                    display: flex;
+                    align-items: center;
+
+                    &__num {
+                        @include num-border;
+                        @include flex-center-row;
+                        position: sticky;
+                    }
+    
+                    &__btn {
+                        @include tertiary-btn;
+                        @include flex-center-row;
+                        margin: 10px 0px 10px -12px;
+    
+                            .fa-solid {
+                                margin-right: 27px;
+                            }
+                        
+                            .fa-mobile-screen-button {
+                                width: 13.019px;
+                                height: 19.903px;
+                                color: $grey-tint;
+                            }
+    
+                            .fa-list-ul {
+                                width: 16px;
+                                height: 15.922px;
+                                color: $grey-tint;
+                            }
+    
+                            .fa-store {
+                                width: 18px;
+                                height: 17.913px;
+                                color: $primary-color;
+                            }
+    
+                            &__txt {
+                                width: 211px;
+                                height: 15.67;
+                                font-size: 16px;
+                                font-weight: 500;
+                                text-align: left;
+                            }
+    
+                    }
+    
                 }
 
-                &__btn {
-                    @include tertiary-btn;
-                    @include flex-center-row;
-                    margin: 10px 0px 10px -12px;
-
-                        .fa-solid {
-                            margin-right: 27px;
-                        }
-                    
-                        .fa-mobile-screen-button {
-                            width: 13.019px;
-                            height: 19.903px;
-                            color: $grey-tint;
-                        }
-
-                        .fa-list-ul {
-                            width: 16px;
-                            height: 15.922px;
-                            color: $grey-tint;
-                        }
-
-                        .fa-store {
-                            width: 18px;
-                            height: 17.913px;
-                            color: $primary-color;
-                        }
-
-                        &__txt {
-                            width: 211px;
-                            height: 15.67;
-                            font-size: 16px;
-                            font-weight: 500;
-                            text-align: left;
-                        }
-
-                }
         }
 }
 
@@ -286,7 +294,7 @@ body {
                         &__link {
                             @include link-basic-att;
                             width: 100%;
-                            height: fit-content;
+                            height: 200px;
 
                                 &__tag {
                                     width: 88px;
@@ -306,6 +314,7 @@ body {
                                 &__img {
                                     width: 100%;
                                     height: 200px;
+                                    object-fit: cover;
                                     border-radius: 15px;
                                 }
 
@@ -320,24 +329,30 @@ body {
                                     align-items: center;
                                     padding: 0px 0px 10px 13px;
 
-                                        &__name {
-                                            @include margin-reset;
-                                            margin: 10px 0 5px 0;
-                                            color: #000;
-                                            font-size: 18px;
-                                            font-style: normal;
-                                            font-weight: 700;
-                                            line-height: normal;
+                                        &__link {
+                                            @include link-basic-att;
+
+                                            &__name {
+                                                @include margin-reset;
+                                                margin: 10px 0 5px 0;
+                                                color: #000;
+                                                font-size: 18px;
+                                                font-style: normal;
+                                                font-weight: 700;
+                                                line-height: normal;
+                                            }
+    
+                                            &__location {
+                                                @include margin-reset;
+                                                color: #000;
+                                                font-size: 17px;
+                                                font-style: normal;
+                                                font-weight: 300;
+                                                line-height: normal;
+                                            }
+    
                                         }
 
-                                        &__location {
-                                            @include margin-reset;
-                                            color: #000;
-                                            font-size: 17px;
-                                            font-style: normal;
-                                            font-weight: 300;
-                                            line-height: normal;
-                                        }
                                 }
 
                                 &__icon {
