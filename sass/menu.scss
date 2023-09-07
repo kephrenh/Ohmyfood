@@ -112,7 +112,7 @@ body {
     margin: 15px 0 15px 0;
 
         &__logo {
-            width: 80%;
+            width: 90%;
             @include flex-center-row;
 
                 &__img {
@@ -156,7 +156,7 @@ body {
         }
 
         &__order {
-            width: 375px;
+            max-width: 100%;
             background: $light-grey;
             @include flex-center-row;
             padding: 0 0 40px 0;
@@ -251,68 +251,66 @@ body {
 
 // Footer
 .footer {
-    width: 100%;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    background-color: $dark-grey;
+    max-width: 100%;
+    padding: 22px 25px;
+    background: $dark-grey;
+    @media (min-width: 1055px) {
+        padding: 30px 25px;
+    }
 
         &__section {
-        width: 100%;
-        height: 120px;
-        background-color: $dark-grey;
-
-            &__title {
-                width: 137.582px;
-                height: 27px;
-                color: white;
-                font-family: Shrikhand;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                @include margin-reset;
-                padding: 22px 0 16px 25px;
-
+            height: 142px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 16px;
+            @media (min-width: 1055px) {
+                height: 54px;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-start;
+                align-items: flex-end;
             }
 
-            &__list {
-                @include list-basic-att;
-                padding: 0 0 0 25px;
-                margin: 0 0 22px 0;
-
-                    li {
-                        font-size: 16px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
-                        
+                &__title {
+                    height: 27px;
+                    color: white;
+                    font-family: Shrikhand;
+                    font-size: 18px;
+                    font-weight: 400;
+                    @include margin-reset;
+                    @media (min-width: 1055px) {
+                        margin: 0 0 0 80px;
                     }
-                    .link {
-                        text-decoration: none;
-                        color: white;
-                    }
+                }
 
-                    .utensils {
-                        width: 11px;
-                        height: 13px;
-                        margin-right: 10px;
-                    }
-
-                    .handshake-angle {
-                        width: 11.918px;
-                        height: 13px;
-                        margin-right: 10px;
+                &__list {
+                    height: 115px;
+                    @include list-basic-att;
+                    @include margin-reset;
+                    @media (min-width: 1055px) {
+                        display: flex;
+                        height: 20px;
+                        gap: 10px;
                     }
 
-                    &__txt {
-                        font-weight: 500;
-                    }
-            }
-    
-          
-    }
+                        &__item {
+                            padding: 5px 0 0 0;
+                            @media (min-width: 1055px) {
+                                @include padding-reset;
+                            }
+
+                                &--margin {
+                                    @media (min-width: 1055px) {
+                                        margin: 0 0 0 45px;
+                                    }
+                                }
+
+                                &__link {
+                                    text-decoration: none;
+                                    color: white;
+                                }
+                        }
+                }
+        }
 }
-
