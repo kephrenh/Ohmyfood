@@ -412,6 +412,10 @@ body {
                                         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
                                         margin: 0px 0px -50px 230px;
                                         position: sticky;
+                                        @media (min-width: 1080px) {
+                                            @include margin-reset;
+                                            margin: 0 0 -50px 375px;
+                                        }
                                     }
     
                                     &__img {
