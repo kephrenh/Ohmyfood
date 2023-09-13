@@ -440,17 +440,35 @@ body {
   font-weight: 300;
   line-height: normal;
 }
-.restaurants__cards__bloc .card__content__icon {
+.restaurants__cards__bloc .card__content__fav {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
-.restaurants__cards__bloc .card__content__icon .icon {
-  fill: none;
-  stroke: #101010;
+.restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--default {
+  opacity: 0;
 }
-.restaurants__cards__bloc .card__content__icon .icon:hover {
-  fill: #9356dc;
-  stroke: none;
+.restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--liked {
+  opacity: 1;
+}
+.restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--default {
+  opacity: 1;
+}
+.restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--liked {
+  opacity: 0;
+}
+.restaurants__cards__bloc .card__content__fav__icon--default {
+  position: absolute;
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 400ms;
+}
+.restaurants__cards__bloc .card__content__fav__icon--liked {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 400ms;
 }
 
 .footer {

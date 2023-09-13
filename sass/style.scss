@@ -465,19 +465,49 @@ body {
     
                                     }
     
-                                    &__icon {
+                                    &__fav {
                                         display: flex;
                                         align-items: center;
-    
-                                            .icon {
-                                                fill: none;
-                                                stroke: #101010;
+                                        position: relative;
+                                        z-index: 1;
+                                        &:hover {
+                                            & .card__content__fav__icon--default {
+                                                opacity: 0;
                                             }
-    
-                                            .icon:hover {
-                                                fill: $primary-color;
-                                                stroke: none;
+
+                                            & .card__content__fav__icon--liked {
+                                                opacity:1;
                                             }
+                                        }
+
+                                        &:not(:hover) {
+                                            & .card__content__fav__icon--default {
+                                                opacity: 1;
+                                            }
+
+                                            & .card__content__fav__icon--liked {
+                                                opacity:0;
+                                            }
+                                        }
+
+                                        &__icon--default {
+                                            position: absolute;
+                                            z-index: -1;
+                                            opacity: 1;
+                                            transition: opacity 400ms;
+                                            
+                                        }
+
+                                        &__icon--liked {
+                                            position: absolute;
+                                            z-index: -1;
+                                            opacity: 0;
+                                            transition: opacity 400ms;
+                                        }
+
+                                            
+    
+                                            
                                         
                                     }
                             }
