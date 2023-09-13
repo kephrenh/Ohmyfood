@@ -106,7 +106,7 @@ body {
 .main__title__fav:not(:active) .main__title__fav__icon--liked {
   opacity: 0;
 }
-@media (min-width: 1080px) {
+@media (min-width: 1055px) {
   .main__title__fav:hover .main__title__fav__icon--default {
     opacity: 0;
   }
