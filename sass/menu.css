@@ -69,11 +69,15 @@ body {
 }
 .main__title__txt {
   width: 80%;
+  height: 100%;
   font-family: Shrikhand;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
 }
 @media (min-width: 1055px) {
@@ -82,9 +86,46 @@ body {
     width: 27%;
   }
 }
-.main__title__txt__fav {
+.main__title__fav {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.main__title__fav:active .main__title__fav__icon--default {
+  opacity: 0;
+}
+.main__title__fav:active .main__title__fav__icon--liked {
+  opacity: 1;
+}
+.main__title__fav:not(:active) .main__title__fav__icon--default {
+  opacity: 1;
+}
+.main__title__fav:not(:active) .main__title__fav__icon--liked {
+  opacity: 0;
+}
+@media (min-width: 1080px) {
+  .main__title__fav:hover .main__title__fav__icon--default {
+    opacity: 0;
+  }
+  .main__title__fav:hover .main__title__fav__icon--liked {
+    opacity: 1;
+  }
+  .main__title__fav:not(:hover) .main__title__fav__icon--default {
+    opacity: 1;
+  }
+  .main__title__fav:not(:hover) .main__title__fav__icon--liked {
+    opacity: 0;
+  }
+}
+.main__title__fav__icon {
   width: 22px;
   height: 21px;
+  position: absolute;
+  z-index: -1;
+  transition: opacity 400ms;
 }
 .main__order {
   max-width: 100%;

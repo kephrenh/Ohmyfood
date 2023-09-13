@@ -163,21 +163,79 @@ body {
 
                 &__txt {
                     width: 80%;
+                    height: 100%;
                     font-family: Shrikhand;
                     font-size: 28px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
+                    @include flex-center-row;
                     @include margin-reset;
                     @media (min-width: 1055px) {
                         @include padding-reset;
                         width: 27%;
                     }
+                }
 
                 &__fav {
-                    width: 22px;
-                    height: 21px;
-                }
+                    width: 20%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    z-index: 1;
+
+                    &:active {
+                        & .main__title__fav__icon--default {
+                            opacity: 0;
+                        }
+
+                        & .main__title__fav__icon--liked {
+                            opacity:1;
+                        }
+                    }
+
+                    &:not(:active) {
+                        & .main__title__fav__icon--default {
+                            opacity: 1;
+                        }
+
+                        & .main__title__fav__icon--liked {
+                            opacity:0;
+                        }
+                    }
+
+                    @media (min-width: 1080px) {
+                        &:hover {
+                            & .main__title__fav__icon--default {
+                                opacity: 0;
+                            }
+
+                            & .main__title__fav__icon--liked {
+                                opacity:1;
+                            }
+                        }
+
+                        &:not(:hover) {
+                            & .main__title__fav__icon--default {
+                                opacity: 1;
+                            }
+
+                            & .main__title__fav__icon--liked {
+                                opacity:0;
+                            }
+                        }
+
+                    }
+
+
+                        &__icon {
+                            width: 22px;
+                            height: 21px;
+                            position: absolute;
+                            z-index: -1;
+                            transition: opacity 400ms;
+                        }
                 }
         }
 
