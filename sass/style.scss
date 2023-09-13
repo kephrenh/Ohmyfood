@@ -470,7 +470,7 @@ body {
                                         align-items: center;
                                         position: relative;
                                         z-index: 1;
-                                        &:hover {
+                                        &:active {
                                             & .card__content__fav__icon--default {
                                                 opacity: 0;
                                             }
@@ -480,7 +480,7 @@ body {
                                             }
                                         }
 
-                                        &:not(:hover) {
+                                        &:not(:active) {
                                             & .card__content__fav__icon--default {
                                                 opacity: 1;
                                             }
@@ -488,6 +488,29 @@ body {
                                             & .card__content__fav__icon--liked {
                                                 opacity:0;
                                             }
+                                        }
+
+                                        @media (min-width: 1080px) {
+                                            &:hover {
+                                                & .card__content__fav__icon--default {
+                                                    opacity: 0;
+                                                }
+    
+                                                & .card__content__fav__icon--liked {
+                                                    opacity:1;
+                                                }
+                                            }
+    
+                                            &:not(:hover) {
+                                                & .card__content__fav__icon--default {
+                                                    opacity: 1;
+                                                }
+    
+                                                & .card__content__fav__icon--liked {
+                                                    opacity:0;
+                                                }
+                                            }
+
                                         }
 
                                         &__icon--default {

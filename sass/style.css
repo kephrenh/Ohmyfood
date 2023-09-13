@@ -446,17 +446,31 @@ body {
   position: relative;
   z-index: 1;
 }
-.restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--default {
+.restaurants__cards__bloc .card__content__fav:active .card__content__fav__icon--default {
   opacity: 0;
 }
-.restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--liked {
+.restaurants__cards__bloc .card__content__fav:active .card__content__fav__icon--liked {
   opacity: 1;
 }
-.restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--default {
+.restaurants__cards__bloc .card__content__fav:not(:active) .card__content__fav__icon--default {
   opacity: 1;
 }
-.restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--liked {
+.restaurants__cards__bloc .card__content__fav:not(:active) .card__content__fav__icon--liked {
   opacity: 0;
+}
+@media (min-width: 1080px) {
+  .restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--default {
+    opacity: 0;
+  }
+  .restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--liked {
+    opacity: 1;
+  }
+  .restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--default {
+    opacity: 1;
+  }
+  .restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--liked {
+    opacity: 0;
+  }
 }
 .restaurants__cards__bloc .card__content__fav__icon--default {
   position: absolute;
