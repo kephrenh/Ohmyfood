@@ -160,13 +160,23 @@ body {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
   transition: background-color 400ms, box-shadow 400ms;
 }
-.main__order__btn:hover {
+.main__order__btn:active {
   background: linear-gradient(193deg, #a16be0 -11.44%, #ff93e1 123.93%);
   box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
 }
-.main__order__btn:not(:hover) {
+.main__order__btn:not(:active) {
   background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 1055px) {
+  .main__order__btn:hover {
+    background: linear-gradient(193deg, #a16be0 -11.44%, #ff93e1 123.93%);
+    box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
+  }
+  .main__order__btn:not(:hover) {
+    background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .menu {
@@ -193,6 +203,7 @@ body {
   line-height: normal;
   text-transform: uppercase;
   margin: 0;
+  margin: 0 0 -15px 0;
 }
 @media (min-width: 1055px) {
   .menu__title {
@@ -203,74 +214,132 @@ body {
   border-bottom: 3px solid #99e2d0;
   padding: 0 0 5px 0;
 }
-.menu .cards {
+.menu__list {
+  height: 270px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   gap: 12px;
 }
 @media (min-width: 1055px) {
-  .menu .cards {
+  .menu__list {
     width: 634px;
   }
 }
-.menu .cards .card {
-  width: 339px;
-  height: 69px;
+.menu__list__card {
+  display: flex;
+}
+.menu__list__card:hover + .menu__list__card__content {
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu__list__card__content {
+  width: 319px;
+  height: 42px;
+  padding: 15px;
   display: flex;
   align-items: center;
   border-radius: 15.043px;
   background: white;
   box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+  transform-origin: right;
+  transition: all 1000ms;
+}
+.menu__list__card__content:hover + .menu__list__card__select {
+  transform: scaleX(1);
+  visibility: visible;
 }
 @media (min-width: 1055px) {
-  .menu .cards .card {
-    width: 100%;
-    height: 69px;
+  .menu__list__card__content {
+    width: 604px;
   }
 }
-.menu .cards .card .link {
-  width: 100%;
-  padding: 15px;
-  text-decoration: none;
-  color: black;
-  display: flex;
-}
-.menu .cards .card .link .card__title {
+.menu__list__card__content__title {
   width: 95%;
+  white-space: nowrap;
+  transition: all 2000ms;
+  transform-origin: right;
+  display: flex;
+  flex-direction: column;
 }
-.menu .cards .card .link .card__title__main {
-  height: 21px;
+.menu__list__card__content__title:hover + .menu__list__card__content__price {
+  display: inline-block;
+  margin: 0 59px 0 0;
+}
+.menu__list__card__content__title__main {
+  margin: 0;
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin: 0;
+  transition: all 2000ms;
+  transform-origin: right;
+  display: inline-block;
 }
-.menu .cards .card .link .card__title__sub {
+.menu__list__card__content__title__sub {
   margin: 0;
-  width: 280px;
-  height: 19px;
-  font-size: 15px;
+  overflow: hidden;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15.043px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  padding: 5px 0 0 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  transition: all 2000ms;
+  transform-origin: right;
+  display: inline-block;
 }
-.menu .cards .card .link .card__price {
+.menu__list__card__content__price {
+  width: 20%;
   margin: 0;
   align-self: flex-end;
   color: #353535;
   text-align: center;
+  font-family: Roboto;
   font-size: 15.043px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin: 0 5px 0 5px;
+  transition: all 2000ms;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu__list__card__select {
+  border: 2px solid #99e2d0;
+  border-radius: 0 15.043px 15.043px 0;
+  width: 59px;
+  height: 69px;
+  background-color: #99e2d0;
+  margin: 0 0 0 -59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 2000ms;
+  visibility: collapse;
+}
+.menu__list__card__select__icon {
+  color: #99e2d0;
+  border: none;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  font-weight: bolder;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer {

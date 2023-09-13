@@ -91,8 +91,9 @@ $light-grey: #f6f6f6;
 }
 
 @mixin card-border {
-    width: 339px;
-    height: 69px;
+    width: 319px;
+    height: 42px;
+    padding: 15px;
     display: flex;
     align-items: center;
     border-radius: 15.043px;
@@ -260,19 +261,35 @@ body {
                 &__btn {
                     @include secondary-btn;
                     transition: background-color 400ms, box-shadow 400ms;
-                    &:hover {
+                    &:active {
                         background: linear-gradient(193deg,
                         lighten($primary-color, 5%) -11.44%,
                         lighten($secondary-color, 5%) 123.93%);
                         box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
                     }
 
-                    &:not(:hover) {
+                    &:not(:active) {
                         background: linear-gradient(193deg,
                         $primary-color -11.44%,
                         $secondary-color 123.93%);
                         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
                     }
+
+                    @media (min-width: 1055px) {
+                        &:hover {
+                            background: linear-gradient(193deg,
+                            lighten($primary-color, 5%) -11.44%,
+                            lighten($secondary-color, 5%) 123.93%);
+                            box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
+                        }
+    
+                        &:not(:hover) {
+                            background: linear-gradient(193deg,
+                            $primary-color -11.44%,
+                            $secondary-color 123.93%);
+                            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+                        }
+                        }
                 }
         }
 }
@@ -297,6 +314,7 @@ body {
             line-height: normal;
             text-transform: uppercase;
             @include margin-reset;
+            margin: 0 0 -15px 0;
             @media (min-width: 1055px) {
                 width: 634px;
             }
@@ -307,69 +325,138 @@ body {
             padding: 0 0 5px 0;
         }
 
-        .cards {
+        &__list {
+            height: 270px;
             @include flex-center-column;
+            overflow: hidden;
             gap: 12px;
             @media (min-width: 1055px) {
                 width: 634px;
             }
 
-            .card {
-                @include card-border;
-                @media (min-width: 1055px) {
-                    width: 100%;
-                    height: 69px;
+            &__card {
+                display: flex;
+                &:hover + .menu__list__card__content {
+                    width: 100px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
 
-                .link {
-                    width: 100%;
-                    padding: 15px;
-                    @include link-basic-att;
-                    display: flex;
+                &__content {
+                    @include card-border;
+                    transform-origin: right;
+                    transition: all 1000ms;
+                    &:hover + .menu__list__card__select {
+                        transform: scaleX(1);
+                        visibility: visible;
+                    }
 
-                        .card__title {
-                            width: 95%;
+                    @media (min-width: 1055px) {
+                        width: 604px;
+                    }
 
-                                &__main {
-                                    height: 21px;
-                                    font-size: 18px;
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    line-height: normal;
-                                    @include margin-reset;
-                                }
+                    &__title {
+                        width: 95%;
+                        white-space: nowrap;
+                        transition: all 2000ms;
+                        transform-origin: right;
+                        display: flex;
+                        flex-direction: column;
+                        &:hover + .menu__list__card__content__price {
+                            display: inline-block;
+                            margin: 0 59px 0 0;
+                        }
+                       
+                     
 
-                                &__sub {
-                                    @include margin-reset;
-                                    width: 280px;
-                                    height: 19px;
-                                    font-size: 15px;
-                                    font-style: normal;
-                                    font-weight: 300;
-                                    line-height: normal;
-                                    padding: 5px 0 0 0;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
-                                }
+                        &__main {
+                            @include margin-reset;
+                            overflow: hidden;
+                            color: #000;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            transition: all 2000ms;
+                            transform-origin: right;
+                            display: inline-block;
+                            
+
                         }
 
-                        .card__price {
+                        &__sub {
+                            
                             @include margin-reset;
-                            align-self: flex-end;
-                            color: #353535;
-                            text-align: center;
+                            overflow: hidden;
+                            color: #000;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                             font-size: 15.043px;
                             font-style: normal;
-                            font-weight: 700;
+                            font-weight: 300;
                             line-height: normal;
-                            margin: 0 5px 0 5px;
+                            transition: all 2000ms;
+                            transform-origin: right;
+                            display: inline-block;
+
                         }
+                    }
+
+                    &__price {
+                        width: 20%;
+                        @include margin-reset;
+                        align-self: flex-end;
+                        color: #353535;
+                        text-align: center;
+                        font-family: Roboto;
+                        font-size: 15.043px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        transition: all 2000ms;
+                        display: flex;
+                        justify-content: flex-end;
+                       
+                        
+                    }
+                }
+
+                &__select {
+                    border: 2px solid #99e2d0;
+                    border-radius: 0 15.043px 15.043px 0;
+                    width: 59px;
+                    height: 69px;
+                    background-color:#99e2d0;
+                    margin: 0 0 0 -59px;
+                    @include flex-center-row;
+                    transform-origin: right;
+                    transform: scaleX(0);
+                    transition: transform 2000ms;
+                    visibility: collapse;
+
+                    &__icon {
+                        color: #99e2d0;
+                        border: none;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 10px;
+                        font-weight: bolder;
+                        border-radius: 50%;
+                        background-color: white;
+                        @include flex-center-row;
+                    }
                 }
             }
+            
         }
-        
 }
+        
+        
+
+
 
 // Footer
 .footer {
