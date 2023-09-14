@@ -7,6 +7,9 @@ body {
   display: flex;
   margin: 15px 0 15px 0;
 }
+.header__link {
+  margin: 0 0 0 17px;
+}
 .header__logo {
   width: 90%;
   display: flex;

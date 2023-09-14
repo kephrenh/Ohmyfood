@@ -113,6 +113,10 @@ body {
     display: flex;
     margin: 15px 0 15px 0;
 
+        &__link {
+            margin: 0 0 0 17px;
+        }
+
         &__logo {
             width: 90%;
             @include flex-center-row;
