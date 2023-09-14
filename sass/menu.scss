@@ -105,6 +105,7 @@ $light-grey: #f6f6f6;
 // Générales
 body {
     font-family: Roboto;
+    @include margin-reset;
 }
 
 // header
@@ -127,6 +128,7 @@ body {
 .main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: $light-grey;
     @media (min-width: 1055px) {
         width: 100%;
@@ -155,9 +157,9 @@ body {
             justify-content: flex-start;
             border-radius: 40px 40px 0 0;
             background-color: $light-grey;
-            width: 100%;
+            width: 95%;
             height: 50px;
-            padding: 40px 0 40px 10px;
+            padding: 40px 0px 40px 10px;
             @media (min-width: 1055px) {
                 width: 1055px;
                 @include margin-reset;
@@ -238,7 +240,6 @@ body {
 
                     }
 
-
                         &__icon {
                             width: 22px;
                             height: 21px;
@@ -261,35 +262,20 @@ body {
                 &__btn {
                     @include secondary-btn;
                     transition: background-color 400ms, box-shadow 400ms;
-                    &:active {
-                        background: linear-gradient(193deg,
+                    &:hover {
+                        background-color: linear-gradient(193deg,
                         lighten($primary-color, 5%) -11.44%,
                         lighten($secondary-color, 5%) 123.93%);
                         box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
                     }
 
-                    &:not(:active) {
-                        background: linear-gradient(193deg,
+                    &:not(:hover) {
+                        background-color: linear-gradient(193deg,
                         $primary-color -11.44%,
                         $secondary-color 123.93%);
                         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
                     }
 
-                    @media (min-width: 1055px) {
-                        &:hover {
-                            background: linear-gradient(193deg,
-                            lighten($primary-color, 5%) -11.44%,
-                            lighten($secondary-color, 5%) 123.93%);
-                            box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
-                        }
-    
-                        &:not(:hover) {
-                            background: linear-gradient(193deg,
-                            $primary-color -11.44%,
-                            $secondary-color 123.93%);
-                            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-                        }
-                        }
                 }
         }
 }
@@ -304,6 +290,7 @@ body {
     @media (min-width: 1055px) {
         width: 1055px;
     }
+    
 
         &__title {
             width: 339px;
@@ -314,61 +301,43 @@ body {
             line-height: normal;
             text-transform: uppercase;
             @include margin-reset;
-            margin: 0 0 -15px 0;
+            &__underline {
+                border-bottom: 3px solid #99e2d0;
+                padding: 0 0 5px 0;
+            }
+
             @media (min-width: 1055px) {
                 width: 634px;
             }
         }
 
-        &__underline {
-            border-bottom: 3px solid #99e2d0;
-            padding: 0 0 5px 0;
-        }
-
         &__list {
-            height: 270px;
             @include flex-center-column;
-            overflow: hidden;
             gap: 12px;
             @media (min-width: 1055px) {
                 width: 634px;
             }
 
             &__card {
-                display: flex;
-                &:hover + .menu__list__card__content {
-                    width: 100px;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
+                width: 100%;
+                @include card-border;
+                @media (min-width: 1055px) {
+                    width: 604px;
                 }
 
                 &__content {
-                    @include card-border;
-                    transform-origin: right;
-                    transition: all 1000ms;
+                    width: 100%;
+                    display: flex;
                     &:hover + .menu__list__card__select {
-                        transform: scaleX(1);
                         visibility: visible;
-                    }
-
-                    @media (min-width: 1055px) {
-                        width: 604px;
+                        transform: scaleX(1);
                     }
 
                     &__title {
-                        width: 95%;
-                        white-space: nowrap;
-                        transition: all 2000ms;
-                        transform-origin: right;
-                        display: flex;
-                        flex-direction: column;
-                        &:hover + .menu__list__card__content__price {
-                            display: inline-block;
-                            margin: 0 59px 0 0;
+                        width: 90%;
+                        @media (min-width: 1055px) {
+                            width: 95%;
                         }
-                       
-                     
 
                         &__main {
                             @include margin-reset;
@@ -380,15 +349,9 @@ body {
                             font-style: normal;
                             font-weight: 500;
                             line-height: normal;
-                            transition: all 2000ms;
-                            transform-origin: right;
-                            display: inline-block;
-                            
-
                         }
 
                         &__sub {
-                            
                             @include margin-reset;
                             overflow: hidden;
                             color: #000;
@@ -398,17 +361,13 @@ body {
                             font-style: normal;
                             font-weight: 300;
                             line-height: normal;
-                            transition: all 2000ms;
-                            transform-origin: right;
-                            display: inline-block;
-
                         }
                     }
 
                     &__price {
-                        width: 20%;
                         @include margin-reset;
-                        align-self: flex-end;
+                        display: flex;
+                        align-items: flex-end;
                         color: #353535;
                         text-align: center;
                         font-family: Roboto;
@@ -416,11 +375,11 @@ body {
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
-                        transition: all 2000ms;
-                        display: flex;
-                        justify-content: flex-end;
-                       
-                        
+                        transform: scaleX(1);
+                        transition: transform 1000s ease-in-out;
+                        @media (min-width: 1055px) {
+                        }
+
                     }
                 }
 
@@ -430,12 +389,13 @@ body {
                     width: 59px;
                     height: 69px;
                     background-color:#99e2d0;
-                    margin: 0 0 0 -59px;
+                    margin: 0 -15px 0 0;
                     @include flex-center-row;
-                    transform-origin: right;
-                    transform: scaleX(0);
-                    transition: transform 2000ms;
                     visibility: collapse;
+                    transform: scaleX(0);
+                    transform-origin: right;
+                    transition: transform 1000ms ease-in-out;
+                    
 
                     &__icon {
                         color: #99e2d0;
@@ -450,9 +410,11 @@ body {
                     }
                 }
             }
-            
         }
 }
+            
+
+
         
         
 
