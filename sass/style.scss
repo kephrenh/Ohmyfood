@@ -207,14 +207,14 @@ body {
                     @include primary-btn;
                     transition: background-color 400ms, box-shadow 400ms;
                     &:hover {
-                        background: linear-gradient(193deg,
+                        background-color: linear-gradient(193deg,
                         lighten($primary-color, 5%) -11.44%,
                         lighten($secondary-color, 5%) 123.93%);
                         box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
                     }
 
                     &:not(:hover) {
-                        background: linear-gradient(193deg,
+                        background-color: linear-gradient(193deg,
                         $primary-color -11.44%,
                         $secondary-color 123.93%);
                         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
