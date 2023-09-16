@@ -7,7 +7,7 @@ $location-color: #353535;
 $grey-tint: #7e7e7e;
 $dark-grey: #353535;
 $light-grey: #f6f6f6;
-$anim-dur: 1500ms;
+$anim-dur: 1000ms;
 $num-menus: 3;
 $anim-delay: $anim-dur / $num-menus;
 
@@ -69,23 +69,48 @@ $anim-delay: $anim-dur / $num-menus;
 @mixin card-border {
     width: 319px;
     height: 42px;
-    padding: 15px;
+    padding: 15px 0 15px 15px;
     display: flex;
     align-items: center;
     border-radius: 15.043px;
     background: white;
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
+    @media (min-width:1055px) {
+        width: 604px;
+        transition: all 1000ms;
+    }
 
+}
+
+@mixin select-border {
+    border: none;
+    border-radius: 0 15.043px 15.043px 0;
+    width: 59px;
+    height: 72px;
+    background-color:#99e2d0;
+    @include flex-center-row;
+}
+
+@mixin select-icon {
+    color: $tertiary-color;
+    border: none;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bolder;
+    border-radius: 50%;
+    background-color: white;
+    @include flex-center-row;
 }
 
 // Keyframes
 @keyframes menus {
     0% {
-        transform: translateX(-20%);
+        transform: translateY(-20%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -274,168 +299,118 @@ body {
 
 // Menu
 .menu {
-    @include flex-center-column;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 12px;
-    background: $light-grey;
     padding: 0 0 40px 0;
     animation: menus $anim-dur ease-in-out;
     @for $i from 1 through $num-menus {
         &--#{$i} {
-            animation-delay: $anim-delay * $i ;
+            animation-delay: $anim-delay * $i;
         }
     }
 
     &--delay1 {
-        animation-delay: +100ms;
+        animation-delay: 100ms;
     }
 
     &--delay2 {
-        animation-delay: +200ms;
+        animation-delay: 200ms;
     }
 
     &--delay3 {
-        animation-delay: +300ms;
+        animation-delay: 300ms;
     }
 
-        @media (min-width: 1055px) {
-                width: 1055px;
-            }
     
+    @media (min-width: 1055px) {
+        width: 1055px;
+        background-color: $light-grey;
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        @include margin-reset;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        text-transform: uppercase;
+        margin: 0 0 5px 0;
+        @media (min-width:1055px) {
+            width: 604px;
+        }
+
+        &__underline {
+            border-bottom: 3px solid $tertiary-color;
+            padding: 0 0 5px 0;
+        }
+    }
+
+    &__card {
+        @include card-border;
+        overflow: hidden;
+        &:hover .menu__card__select {
+            margin-right: 0;
+        }
+
         &__title {
-            width: 339px;
-            height: 27px;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            overflow: hidden;
+            
+
+            &__main {
+                @include margin-reset;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            &__sub {
+                @include margin-reset;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 15.043px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+            }
+        }
+
+        &__price {
             @include margin-reset;
-            
-            &__underline {
-                border-bottom: 3px solid #99e2d0;
-                padding: 0 0 5px 0;
-            }
-
-            @media (min-width: 1055px) {
-                width: 634px;
-            }
+            padding: 0 15px 0 0;
+            margin-left: auto;
+            height: 42px;
+            display: flex;
+            align-items: flex-end;
+            color: #353535;
+            font-family: Roboto;
+            font-size: 15.043px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
         }
 
-        &__list {
-            @include flex-center-column;
-            gap: 12px;
-            transform-origin: top left;
-        
-        
-            
-            @media (min-width: 1055px) {
-                width: 634px;
-            }
+        &__select {
+            @include select-border;
+            margin-right: -59px;
+            transition: all 1000ms;
 
-            &__card {
-                width: 100%;
-                @include card-border;
-                
-                @media (min-width: 1055px) {
-                    width: 604px;
-                }
-
-                &__content {
-                    width: 100%;
-                    display: flex;
-                    transform: scaleX(1);
-                    transform-origin: right;
-                    transition: transform 1000ms ease-in-out;
-                    &:hover {
-
-                       
-                        & + .menu__list__card__select {
-                            visibility: visible;
-                            transform: scaleX(1);
-                        }
-                    }
-                    
-                    
-                    
-
-                    &__title {
-                        width: 95%;
-    
-                        @media (min-width: 1055px) {
-                            width: 95%;
-                        }
-
-                        &__main {
-                            @include margin-reset;
-                            overflow: hidden;
-                            color: #000;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            font-size: 18px;
-                            font-style: normal;
-                            font-weight: 500;
-                            line-height: normal;
-                        }
-
-                        &__sub {
-                            @include margin-reset;
-                            overflow: hidden;
-                            color: #000;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            font-size: 15.043px;
-                            font-style: normal;
-                            font-weight: 300;
-                            line-height: normal;
-                        }
-                    }
-
-                    &__price {
-                        @include margin-reset;
-                        display: flex;
-                        align-items: flex-end;
-                        color: #353535;
-                        text-align: center;
-                        font-family: Roboto;
-                        font-size: 15.043px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: normal;
-                        @media (min-width: 1055px) {
-                        }
-
-                    }
-                }
-
-                &__select {
-                    border: 2px solid #99e2d0;
-                    border-radius: 0 15.043px 15.043px 0;
-                    width: 59px;
-                    height: 69px;
-                    background-color:#99e2d0;
-                    margin: 0 -15px 0 0;
-                    @include flex-center-row;
-                    visibility: collapse;
-                    transform: scaleX(0);
-                    transform-origin: right;
-                    transition: transform 1000ms ease-in-out;
-                    
-
-                    &__icon {
-                        color: #99e2d0;
-                        border: none;
-                        width: 20px;
-                        height: 20px;
-                        font-size: 10px;
-                        font-weight: bolder;
-                        border-radius: 50%;
-                        background-color: white;
-                        @include flex-center-row;
-                    }
-                }
+            &__icon {
+                @include select-icon;
             }
         }
+    }
 }
             
 

@@ -1,10 +1,10 @@
 @keyframes menus {
   0% {
-    transform: translateX(-20%);
+    transform: translateY(-20%);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -187,22 +187,18 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   gap: 12px;
-  background: #f6f6f6;
   padding: 0 0 40px 0;
-  animation: menus 1500ms ease-in-out;
+  animation: menus 1000ms ease-in-out;
 }
 .menu--1 {
-  animation-delay: 500ms;
+  animation-delay: 333.3333333333ms;
 }
 .menu--2 {
-  animation-delay: 1000ms;
+  animation-delay: 666.6666666667ms;
 }
 .menu--3 {
-  animation-delay: 1500ms;
+  animation-delay: 1000ms;
 }
 .menu--delay1 {
   animation-delay: 100ms;
@@ -216,79 +212,59 @@ body {
 @media (min-width: 1055px) {
   .menu {
     width: 1055px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
   }
 }
 .menu__title {
-  width: 339px;
-  height: 27px;
+  margin: 0;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 0 5px 0;
+}
+@media (min-width: 1055px) {
+  .menu__title {
+    width: 604px;
+  }
 }
 .menu__title__underline {
   border-bottom: 3px solid #99e2d0;
   padding: 0 0 5px 0;
 }
-@media (min-width: 1055px) {
-  .menu__title {
-    width: 634px;
-  }
-}
-.menu__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  transform-origin: top left;
-}
-@media (min-width: 1055px) {
-  .menu__list {
-    width: 634px;
-  }
-}
-.menu__list__card {
-  width: 100%;
+.menu__card {
   width: 319px;
   height: 42px;
-  padding: 15px;
+  padding: 15px 0 15px 15px;
   display: flex;
   align-items: center;
   border-radius: 15.043px;
   background: white;
   box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 @media (min-width: 1055px) {
-  .menu__list__card {
+  .menu__card {
     width: 604px;
+    transition: all 1000ms;
   }
 }
-.menu__list__card__content {
-  width: 100%;
+.menu__card:hover .menu__card__select {
+  margin-right: 0;
+}
+.menu__card__title {
   display: flex;
-  transform: scaleX(1);
-  transform-origin: right;
-  transition: transform 1000ms ease-in-out;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  overflow: hidden;
 }
-.menu__list__card__content:hover + .menu__list__card__select {
-  visibility: visible;
-  transform: scaleX(1);
-}
-.menu__list__card__content__title {
-  width: 95%;
-}
-@media (min-width: 1055px) {
-  .menu__list__card__content__title {
-    width: 95%;
-  }
-}
-.menu__list__card__content__title__main {
+.menu__card__title__main {
   margin: 0;
   overflow: hidden;
-  color: #000;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 18px;
@@ -296,10 +272,9 @@ body {
   font-weight: 500;
   line-height: normal;
 }
-.menu__list__card__content__title__sub {
+.menu__card__title__sub {
   margin: 0;
   overflow: hidden;
-  color: #000;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 15.043px;
@@ -307,34 +282,33 @@ body {
   font-weight: 300;
   line-height: normal;
 }
-.menu__list__card__content__price {
+.menu__card__price {
   margin: 0;
+  padding: 0 15px 0 0;
+  margin-left: auto;
+  height: 42px;
   display: flex;
   align-items: flex-end;
   color: #353535;
-  text-align: center;
   font-family: Roboto;
   font-size: 15.043px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-.menu__list__card__select {
-  border: 2px solid #99e2d0;
+.menu__card__select {
+  border: none;
   border-radius: 0 15.043px 15.043px 0;
   width: 59px;
-  height: 69px;
+  height: 72px;
   background-color: #99e2d0;
-  margin: 0 -15px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: collapse;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 1000ms ease-in-out;
+  margin-right: -59px;
+  transition: all 1000ms;
 }
-.menu__list__card__select__icon {
+.menu__card__select__icon {
   color: #99e2d0;
   border: none;
   width: 20px;
