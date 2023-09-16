@@ -1,3 +1,11 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -11,6 +19,82 @@ body {
   font-family: Roboto;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes vanish {
+  0% {
+    transform: scaleZ(1);
+  }
+  70%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rev-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.loader {
+  opacity: 0.9;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  height: 100vh;
+  inset: 0;
+  z-index: 9999;
+  transform-origin: top;
+  animation: vanish 1000ms 6s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-top: 5px solid #9356dc;
+  border-right: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 3s infinite ease-in-out;
+  z-index: 1;
+  position: absolute;
+}
+.loader::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-top: 5px solid #ff79da;
+  border-right: 5px solid transparent;
+  border-radius: 50%;
+  animation: rev-spin 3s infinite ease-in-out;
+  z-index: 1;
+  position: absolute;
+}
+.loader__txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Shrikhand;
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  position: absolute;
 }
 
 .header {

@@ -88,6 +88,19 @@ $dark-grey: #353535;
     padding: 0;
 }
 
+// Keyframes
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
 // Générales
 * {
     box-sizing: border-box;
@@ -102,7 +115,101 @@ body {
     font-family: Roboto;
     @include padding-reset;
     @include margin-reset;
+    display: flex;
+    flex-direction: column;
 }
+
+
+
+// loader
+@keyframes vanish {
+    0% {
+        transform: scaleZ(1);
+    }
+
+    70%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rev-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+$anim-dur: 3s;
+$anim-turn: 2;
+
+
+.loader {
+    opacity: 0.9;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    height: 100vh;
+    inset: 0;
+    z-index: 9999;
+    transform-origin: top;
+    animation: vanish 1000ms $anim-dur*$anim-turn forwards;
+    @include flex-center-row;
+
+
+    &::before {
+        content: "";
+        width: 200px;
+        height: 200px;
+        border-top: 5px solid $primary-color;
+        border-right: 5px solid transparent;
+        border-radius: 50%;
+        animation: spin $anim-dur infinite ease-in-out;
+        z-index: 1;
+        position: absolute;
+    }
+
+    &::after {
+        content: "";
+        width: 150px;
+        height: 150px;
+        border-top: 5px solid $secondary-color;
+        border-right: 5px solid transparent;
+        border-radius: 50%;
+        animation: rev-spin $anim-dur infinite ease-in-out;
+        z-index: 1;
+        position: absolute;
+    }
+
+    &__txt {
+        @include flex-center-row;
+        font-family: Shrikhand;
+        font-size: 20px;;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+        position: absolute;
+    }
+
+
+
+}
+
 
 // Header
 
