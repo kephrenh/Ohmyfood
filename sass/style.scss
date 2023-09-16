@@ -10,7 +10,7 @@ $dark-grey: #353535;
 @mixin primary-btn {
     width: 218px;
     height: 50px;
-    padding: 13px 18.75px 13px 18.75px;
+    @include flex-center-row;
     border: none;
     border-radius: 25px;
     color: white;
