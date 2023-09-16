@@ -12,21 +12,8 @@ $num-menus: 3;
 $anim-delay: $anim-dur / $num-menus;
 
 // Mixins
-@mixin primary-btn {
-    width: 218px;
-    height: 50px;
-    padding: 13px 18.75px 13px 18.75px;
-    border: none;
-    border-radius: 25px;
-    color: white;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-    background: linear-gradient(193deg, $primary-color -11.44%, $secondary-color 123.93%);
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-}
 
-@mixin secondary-btn {
+@mixin primary-btn {
     width: 186px;
     height: 50px;
     border: none;
@@ -46,20 +33,6 @@ $anim-delay: $anim-dur / $num-menus;
     border-radius: 20px;
     background: #f6f6f6;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-}
-
-@mixin num-border {
-    width: 24px;
-    height: 24px;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    background: $primary-color;
-    font-family: Roboto;
-    font-size: 14.182px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
 }
 
 @mixin flex-center-row {
@@ -106,13 +79,13 @@ $anim-delay: $anim-dur / $num-menus;
 }
 
 // Keyframes
-@keyframes lists {
+@keyframes menus {
     0% {
-        transform: translateY(-20%);
+        transform: translateX(-20%);
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -279,7 +252,7 @@ body {
             }
 
                 &__btn {
-                    @include secondary-btn;
+                    @include primary-btn;
                     transition: background-color 400ms, box-shadow 400ms;
                     &:hover {
                         background: linear-gradient(193deg,
@@ -306,6 +279,25 @@ body {
     gap: 12px;
     background: $light-grey;
     padding: 0 0 40px 0;
+    animation: menus $anim-dur ease-in-out;
+    @for $i from 1 through $num-menus {
+        &--#{$i} {
+            animation-delay: $anim-delay * $i ;
+        }
+    }
+
+    &--delay1 {
+        animation-delay: +100ms;
+    }
+
+    &--delay2 {
+        animation-delay: +200ms;
+    }
+
+    &--delay3 {
+        animation-delay: +300ms;
+    }
+
         @media (min-width: 1055px) {
                 width: 1055px;
             }
@@ -334,24 +326,6 @@ body {
             @include flex-center-column;
             gap: 12px;
             transform-origin: top left;
-            animation: lists $anim-dur ease-in-out;
-            @for $i from 1 through $num-menus {
-                &--#{$i} {
-                    animation-delay: $anim-delay * $i ;
-                }
-            }
-        
-            &--delay1 {
-                animation-delay: +100ms;
-            }
-        
-            &--delay2 {
-                animation-delay: +200ms;
-            }
-        
-            &--delay3 {
-                animation-delay: +300ms;
-            }
         
         
             
