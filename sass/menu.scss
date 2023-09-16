@@ -7,6 +7,9 @@ $location-color: #353535;
 $grey-tint: #7e7e7e;
 $dark-grey: #353535;
 $light-grey: #f6f6f6;
+$anim-dur: 1500ms;
+$num-menus: 3;
+$anim-delay: $anim-dur / $num-menus;
 
 // Mixins
 @mixin primary-btn {
@@ -100,6 +103,18 @@ $light-grey: #f6f6f6;
     background: white;
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
 
+}
+
+// Keyframes
+@keyframes lists {
+    0% {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 // Générales
@@ -267,14 +282,14 @@ body {
                     @include secondary-btn;
                     transition: background-color 400ms, box-shadow 400ms;
                     &:hover {
-                        background-color: linear-gradient(193deg,
+                        background: linear-gradient(193deg,
                         lighten($primary-color, 5%) -11.44%,
                         lighten($secondary-color, 5%) 123.93%);
                         box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
                     }
 
                     &:not(:hover) {
-                        background-color: linear-gradient(193deg,
+                        background: linear-gradient(193deg,
                         $primary-color -11.44%,
                         $secondary-color 123.93%);
                         box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
@@ -291,11 +306,10 @@ body {
     gap: 12px;
     background: $light-grey;
     padding: 0 0 40px 0;
-    @media (min-width: 1055px) {
-        width: 1055px;
-    }
+        @media (min-width: 1055px) {
+                width: 1055px;
+            }
     
-
         &__title {
             width: 339px;
             height: 27px;
@@ -305,6 +319,7 @@ body {
             line-height: normal;
             text-transform: uppercase;
             @include margin-reset;
+            
             &__underline {
                 border-bottom: 3px solid #99e2d0;
                 padding: 0 0 5px 0;
@@ -318,6 +333,28 @@ body {
         &__list {
             @include flex-center-column;
             gap: 12px;
+            transform-origin: top left;
+            animation: lists $anim-dur ease-in-out;
+            @for $i from 1 through $num-menus {
+                &--#{$i} {
+                    animation-delay: $anim-delay * $i ;
+                }
+            }
+        
+            &--delay1 {
+                animation-delay: +100ms;
+            }
+        
+            &--delay2 {
+                animation-delay: +200ms;
+            }
+        
+            &--delay3 {
+                animation-delay: +300ms;
+            }
+        
+        
+            
             @media (min-width: 1055px) {
                 width: 634px;
             }
@@ -325,6 +362,7 @@ body {
             &__card {
                 width: 100%;
                 @include card-border;
+                
                 @media (min-width: 1055px) {
                     width: 604px;
                 }
@@ -332,13 +370,24 @@ body {
                 &__content {
                     width: 100%;
                     display: flex;
-                    &:hover + .menu__list__card__select {
-                        visibility: visible;
-                        transform: scaleX(1);
+                    transform: scaleX(1);
+                    transform-origin: right;
+                    transition: transform 1000ms ease-in-out;
+                    &:hover {
+
+                       
+                        & + .menu__list__card__select {
+                            visibility: visible;
+                            transform: scaleX(1);
+                        }
                     }
+                    
+                    
+                    
 
                     &__title {
-                        width: 90%;
+                        width: 95%;
+    
                         @media (min-width: 1055px) {
                             width: 95%;
                         }
@@ -379,8 +428,6 @@ body {
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
-                        transform: scaleX(1);
-                        transition: transform 1000s ease-in-out;
                         @media (min-width: 1055px) {
                         }
 

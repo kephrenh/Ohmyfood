@@ -1,3 +1,13 @@
+@keyframes lists {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 body {
   font-family: Roboto;
   margin: 0;
@@ -166,11 +176,11 @@ body {
   transition: background-color 400ms, box-shadow 400ms;
 }
 .main__order__btn:hover {
-  background-color: linear-gradient(193deg, #a16be0 -11.44%, #ff93e1 123.93%);
+  background: linear-gradient(193deg, #a16be0 -11.44%, #ff93e1 123.93%);
   box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
 }
 .main__order__btn:not(:hover) {
-  background-color: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
+  background: linear-gradient(193deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -214,6 +224,26 @@ body {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  transform-origin: top left;
+  animation: lists 1500ms ease-in-out;
+}
+.menu__list--1 {
+  animation-delay: 500ms;
+}
+.menu__list--2 {
+  animation-delay: 1000ms;
+}
+.menu__list--3 {
+  animation-delay: 1500ms;
+}
+.menu__list--delay1 {
+  animation-delay: 100ms;
+}
+.menu__list--delay2 {
+  animation-delay: 200ms;
+}
+.menu__list--delay3 {
+  animation-delay: 300ms;
 }
 @media (min-width: 1055px) {
   .menu__list {
@@ -239,13 +269,16 @@ body {
 .menu__list__card__content {
   width: 100%;
   display: flex;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 1000ms ease-in-out;
 }
 .menu__list__card__content:hover + .menu__list__card__select {
   visibility: visible;
   transform: scaleX(1);
 }
 .menu__list__card__content__title {
-  width: 90%;
+  width: 95%;
 }
 @media (min-width: 1055px) {
   .menu__list__card__content__title {
@@ -285,8 +318,6 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  transform: scaleX(1);
-  transition: transform 1000s ease-in-out;
 }
 .menu__list__card__select {
   border: 2px solid #99e2d0;
