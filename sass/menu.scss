@@ -174,9 +174,10 @@ body {
             justify-content: flex-start;
             border-radius: 40px 40px 0 0;
             background-color: $light-grey;
-            width: 95%;
+            width: 340px;
             height: 50px;
             padding: 40px 0px 40px 10px;
+            white-space: nowrap;
             @media (min-width: 1055px) {
                 width: 1055px;
                 @include margin-reset;
@@ -184,87 +185,64 @@ body {
                 padding: 51px 0 40px 0;
             }
 
-                &__txt {
-                    width: 70%;
-                    height: 100%;
-                    font-family: Shrikhand;
-                    font-size: 28px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: normal;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
+            &__txt {
+                width: 70%;
+                height: 100%;
+                font-family: Shrikhand;
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                @include margin-reset;
+                @media (min-width: 1055px) {
+                    @include padding-reset;
+                    width: 27%;
+                }
+            }
+
+            &__fav {
+                width: 22px;
+                height: 21px;
+                display: flex;
+                align-items: center;
+                margin: 0 0 0 45px;
+                position: relative;
+                z-index: 1;
+                @media (min-width:1055px) {
                     @include margin-reset;
-                    @media (min-width: 1055px) {
-                        @include padding-reset;
-                        width: 27%;
+                }
+
+                &:hover {
+                    & .main__title__fav__icon--default {
+                        opacity: 0;
+                    }
+
+                    & .main__title__fav__icon--liked {
+                        opacity:1;
                     }
                 }
 
-                &__fav {
+                &:not(:hover) {
+                    & .main__title__fav__icon--default {
+                        opacity: 1;
+                    }
+
+                    & .main__title__fav__icon--liked {
+                        opacity:0;
+                    }
+                }
+
+                &__icon {
                     width: 22px;
                     height: 21px;
-                    display: flex;
-                    align-items: center;
-                    margin: 0 0 0 45px;
-                    position: relative;
-                    z-index: 1;
-                    @media (min-width:1055px) {
-                        @include margin-reset;
-                    }
-
-                    &:active {
-                        & .main__title__fav__icon--default {
-                            opacity: 0;
-                        }
-
-                        & .main__title__fav__icon--liked {
-                            opacity:1;
-                        }
-                    }
-
-                    &:not(:active) {
-                        & .main__title__fav__icon--default {
-                            opacity: 1;
-                        }
-
-                        & .main__title__fav__icon--liked {
-                            opacity:0;
-                        }
-                    }
-
-                    @media (min-width: 1055px) {
-                        &:hover {
-                            & .main__title__fav__icon--default {
-                                opacity: 0;
-                            }
-
-                            & .main__title__fav__icon--liked {
-                                opacity:1;
-                            }
-                        }
-
-                        &:not(:hover) {
-                            & .main__title__fav__icon--default {
-                                opacity: 1;
-                            }
-
-                            & .main__title__fav__icon--liked {
-                                opacity:0;
-                            }
-                        }
-
-                    }
-
-                        &__icon {
-                            width: 22px;
-                            height: 21px;
-                            position: absolute;
-                            z-index: -1;
-                            transition: opacity 400ms;
-                        }
+                    position: absolute;
+                    z-index: -1;
+                    transition: opacity 400ms;
                 }
+            }
         }
 
         &__order {
@@ -276,25 +254,26 @@ body {
                 width: 1055px;
             }
 
-                &__btn {
-                    @include primary-btn;
-                    transition: background-color 400ms, box-shadow 400ms;
-                    &:hover {
-                        background: linear-gradient(193deg,
-                        lighten($primary-color, 5%) -11.44%,
-                        lighten($secondary-color, 5%) 123.93%);
-                        box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
-                    }
-
-                    &:not(:hover) {
-                        background: linear-gradient(193deg,
-                        $primary-color -11.44%,
-                        $secondary-color 123.93%);
-                        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-                    }
-
+            &__btn {
+                @include primary-btn;
+                transition: background-color 400ms, box-shadow 400ms;
+                &:hover {
+                    background: linear-gradient(193deg,
+                    lighten($primary-color, 5%) -11.44%,
+                    lighten($secondary-color, 5%) 123.93%);
+                    box-shadow: 0px 7px 11px 0px rgba(0, 0, 0, 0.25);
                 }
+
+                &:not(:hover) {
+                    background: linear-gradient(193deg,
+                    $primary-color -11.44%,
+                    $secondary-color 123.93%);
+                    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+                }
+
+            }
         }
+
 }
 
 // Menu
