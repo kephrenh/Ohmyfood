@@ -66,6 +66,10 @@ $anim-delay: $anim-dur / $num-menus;
     padding: 0;
 }
 
+@mixin gap-reset {
+    gap: 0;
+}
+
 @mixin card-border {
     width: 319px;
     height: 42px;
@@ -124,19 +128,40 @@ body {
 // header
 .header {
     display: flex;
-    margin: 15px 0 15px 0;
+    align-items: center;
+    padding: 14px 89px 13px 17px;
+    gap: 60px;
+    @media (min-width: 1055px) {
+        @include gap-reset;
+        @include padding-reset;
+        padding: 30px 621px 32.14px 17px;
+        gap: 572px;
+    }
 
         &__link {
-            margin: 0 0 0 17px;
+            display: flex;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         &__logo {
-            width: 90%;
-            @include flex-center-row;
+            display: flex;
+            justify-content: flex-start;
+            width: 204px;
 
                 &__img {
                     width: 162px;
-                    height: 36px;
+                    height: 44px;
+                    @media (min-width: 1055px) {
+                        width: 200px;
+                        height: 34.2px;
+                    }
                 }
         }
 }
@@ -273,7 +298,6 @@ body {
 
             }
         }
-
 }
 
 // Menu
@@ -391,13 +415,6 @@ body {
         }
     }
 }
-            
-
-
-        
-        
-
-
 
 // Footer
 .footer {
