@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -6,23 +7,6 @@
     opacity: 1;
   }
 }
-* {
-  box-sizing: border-box;
-}
-
-html {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: Roboto;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
 @keyframes vanish {
   0% {
     transform: scaleZ(1);
@@ -48,6 +32,23 @@ body {
     transform: rotate(-360deg);
   }
 }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .loader {
   opacity: 0.9;
   position: fixed;
@@ -56,7 +57,7 @@ body {
   background-color: #fff;
   height: 100vh;
   inset: 0;
-  z-index: 9999;
+  z-index: 1;
   transform-origin: top;
   animation: vanish 1000ms 6s forwards;
   display: flex;
@@ -72,7 +73,7 @@ body {
   border-radius: 50%;
   animation: spin 3s infinite ease-in-out;
   z-index: 1;
-  position: absolute;
+  position: fixed;
 }
 .loader::after {
   content: "";
@@ -83,7 +84,7 @@ body {
   border-radius: 50%;
   animation: rev-spin 3s infinite ease-in-out;
   z-index: 1;
-  position: absolute;
+  position: fixed;
 }
 .loader__txt {
   display: flex;
@@ -97,7 +98,7 @@ body {
   position: absolute;
 }
 
-.header {
+Header .header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,11 +106,11 @@ body {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 @media (min-width: 1080px) {
-  .header {
+  Header .header {
     width: 100%;
   }
 }
-.header__logo {
+Header .header__logo {
   width: 100%;
   height: 63px;
   padding: 14px 89px 13px 89px;
@@ -118,7 +119,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.header__logo__img {
+Header .header__logo__img {
   width: 197px;
   height: 36px;
   padding: 0px 19px 0px 16px;
@@ -126,7 +127,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.header__location {
+Header .header__location {
   width: 100%;
   height: 50px;
   gap: 17px;
@@ -135,7 +136,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.header__location__txt {
+Header .header__location__txt {
   border: none;
   background-color: #eaeaea;
   width: 109px;
@@ -256,18 +257,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0 0 15px;
     margin: 25px;
   }
 }
 .functioning__title {
+  width: 340px;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0;
   margin: 0px 0px 20px 0px;
-  padding-left: 10px;
+  padding-left: 18px;
 }
 @media (min-width: 1080px) {
   .functioning__title {
@@ -365,220 +366,168 @@ body {
 }
 
 .restaurants {
-  width: 100%;
-  height: 1329.6px;
   background-color: #f6f6f6;
-  padding: 50px 0px 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 70px 0;
 }
 @media (min-width: 1080px) {
   .restaurants {
     width: 100%;
-    height: 746.8px;
-    gap: 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 50px 180px;
+    gap: 30px;
   }
 }
 .restaurants__title {
+  width: 340px;
   margin: 0;
-  padding: 0px 0px 0px 10px;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
 @media (min-width: 1080px) {
   .restaurants__title {
     width: 1080px;
-    height: 49.6px;
-    padding: 0 0 10px 10px;
   }
 }
 .restaurants__cards {
-  width: 100%;
-  height: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 18px;
 }
 @media (min-width: 1080px) {
   .restaurants__cards {
-    width: 100%;
-    height: 600px;
+    gap: 0;
     gap: 50px;
   }
 }
 .restaurants__cards__bloc {
-  width: 100%;
-  height: 600px;
-  gap: 18px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  gap: 18px;
 }
 @media (min-width: 1080px) {
   .restaurants__cards__bloc {
-    width: 1080px;
-    height: 300px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    gap: 0;
     gap: 100px;
-    padding: 0 10px 0 10px;
-  }
-}
-.restaurants__cards__bloc--border {
-  margin: 0 0 -32px 0;
-}
-@media (min-width: 1080px) {
-  .restaurants__cards__bloc--border {
-    margin: 0;
   }
 }
 .restaurants__cards__bloc .card {
   width: 340px;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 251px;
   border-radius: 15px;
+  background: #fff;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 1080px) {
   .restaurants__cards__bloc .card {
-    width: 45.3335%;
-    height: -moz-fit-content;
-    height: fit-content;
+    width: 490px;
   }
 }
-.restaurants__cards__bloc .card--margin {
-  margin-bottom: 20px;
-}
-@media (min-width: 1080px) {
-  .restaurants__cards__bloc .card--margin {
-    margin: 0;
-  }
-}
-.restaurants__cards__bloc .card__link {
+.restaurants__cards__bloc .card .link {
   text-decoration: none;
   color: black;
-  width: 100%;
-  height: 200px;
+}
+.restaurants__cards__bloc .card .link .bg-img {
+  background-size: cover;
+  width: 340px;
+  height: 174px;
+  background-repeat: no-repeat;
+  border-radius: 15px 15px 0 0;
+  padding: 20px 0 0 240px;
 }
 @media (min-width: 1080px) {
-  .restaurants__cards__bloc .card__link {
-    width: 100%;
+  .restaurants__cards__bloc .card .link .bg-img {
+    width: 490px;
+    height: 174px;
   }
 }
-.restaurants__cards__bloc .card__link__tag {
-  width: 88px;
-  height: 28px;
+@media (min-width: 1080px) {
+  .restaurants__cards__bloc .card .link .bg-img {
+    padding: 20px 0 0 380px;
+  }
+}
+.restaurants__cards__bloc .card .link .bg-img .tag {
+  width: 89px;
+  height: 29px;
   color: #008766;
+  text-align: center;
   font-size: 14px;
+  font-style: normal;
   font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #99e2d0;
-  border: 1px solid #99e2d0;
+  line-height: normal;
+  padding: 7px 9.63px 6px 9px;
+  border: none;
   border-radius: 2px;
+  background-color: #99e2d0;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  margin: 0px 0px -50px 230px;
-  position: sticky;
-}
-@media (min-width: 1080px) {
-  .restaurants__cards__bloc .card__link__tag {
-    margin: 0;
-    margin: 0 0 -50px 375px;
-  }
-}
-.restaurants__cards__bloc .card__link__img {
-  width: 100%;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 15px;
-}
-.restaurants__cards__bloc .card__content {
   display: flex;
 }
-.restaurants__cards__bloc .card__content__txt {
+.restaurants__cards__bloc .card .link .bg-img--1 {
+  background-image: url(../assets/images/restaurants/la-palette-du-gout.jpg);
+}
+.restaurants__cards__bloc .card .link .bg-img--2 {
+  background-image: url(../assets/images/restaurants/la-note-enchante.jpg);
+}
+.restaurants__cards__bloc .card .link .bg-img--3 {
+  background-image: url(../assets/images/restaurants/a-la-française.jpg);
+}
+.restaurants__cards__bloc .card .link .bg-img--4 {
+  background-image: url(../assets/images/restaurants/le-delice-des-sens.jpg);
+}
+.restaurants__cards__bloc .card .link .content {
+  height: 77px;
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+}
+.restaurants__cards__bloc .card .link .content .txt {
   width: 85%;
   display: flex;
-  align-items: center;
-  padding: 0px 0px 10px 13px;
+  flex-direction: column;
+  gap: 5px;
 }
 @media (min-width: 1080px) {
-  .restaurants__cards__bloc .card__content__txt {
+  .restaurants__cards__bloc .card .link .content .txt {
     width: 90%;
   }
 }
-.restaurants__cards__bloc .card__content__txt__link {
-  text-decoration: none;
-  color: black;
-}
-.restaurants__cards__bloc .card__content__txt__link__name {
+.restaurants__cards__bloc .card .link .content .txt .name {
   margin: 0;
-  margin: 10px 0 5px 0;
-  color: #000;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
 }
-.restaurants__cards__bloc .card__content__txt__link__location {
+.restaurants__cards__bloc .card .link .content .txt .location {
   margin: 0;
-  color: #000;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
 }
-.restaurants__cards__bloc .card__content__fav {
-  display: flex;
-  align-items: center;
+.restaurants__cards__bloc .card .link .favorite {
   position: relative;
   z-index: 1;
+  height: auto;
+  display: flex;
+  align-items: center;
 }
-.restaurants__cards__bloc .card__content__fav:active .card__content__fav__icon--default {
+.restaurants__cards__bloc .card .link .favorite:hover .heart--default {
   opacity: 0;
 }
-.restaurants__cards__bloc .card__content__fav:active .card__content__fav__icon--liked {
+.restaurants__cards__bloc .card .link .favorite:hover .heart--liked {
   opacity: 1;
 }
-.restaurants__cards__bloc .card__content__fav:not(:active) .card__content__fav__icon--default {
+.restaurants__cards__bloc .card .link .favorite:not(:hover) .heart--default {
   opacity: 1;
 }
-.restaurants__cards__bloc .card__content__fav:not(:active) .card__content__fav__icon--liked {
+.restaurants__cards__bloc .card .link .favorite:not(:hover) .heart--liked {
   opacity: 0;
 }
-@media (min-width: 1080px) {
-  .restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--default {
-    opacity: 0;
-  }
-  .restaurants__cards__bloc .card__content__fav:hover .card__content__fav__icon--liked {
-    opacity: 1;
-  }
-  .restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--default {
-    opacity: 1;
-  }
-  .restaurants__cards__bloc .card__content__fav:not(:hover) .card__content__fav__icon--liked {
-    opacity: 0;
-  }
-}
-.restaurants__cards__bloc .card__content__fav__icon--default {
+.restaurants__cards__bloc .card .link .favorite .heart {
+  width: 22px;
+  height: 21px;
   position: absolute;
   z-index: -1;
-  opacity: 1;
   transition: opacity 400ms;
-}
-.restaurants__cards__bloc .card__content__fav__icon--liked {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 400ms;
+  align-self: center;
 }
 
 .footer {

@@ -5,6 +5,11 @@ $background-grey: #eaeaea;
 $location-color: #353535;
 $grey-tint: #7e7e7e;
 $dark-grey: #353535;
+$tag: #008766;
+$card-bckgrnd: #fff;
+$anim-dur: 3s;
+$anim-turn: 2;
+
 
 // Mixins
 @mixin primary-btn {
@@ -88,6 +93,78 @@ $dark-grey: #353535;
     padding: 0;
 }
 
+@mixin gap-reset {
+    gap: 0;
+}
+
+@mixin restaurant-card {
+    width: 340px;
+    height: 251px;
+    border-radius: 15px;
+    background: $card-bckgrnd;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+    @media (min-width: 1080px) {
+        width: 490px;
+    }
+}
+
+@mixin tag {
+    width: 89px;
+    height: 29px;
+    color: $tag;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 7px 9.63px 6px 9px;
+    border: none;
+    border-radius: 2px;
+    background-color: $tertiary-color;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+@mixin favorite {
+    position: relative;
+    z-index: 1;
+}
+
+@mixin heart {
+    width: 22px;
+    height: 21px;
+    position: absolute;
+    z-index: -1;
+    transition: opacity 400ms;
+}
+
+@mixin image-bckgrnd {
+    background-size: cover;
+    width: 340px;
+    height: 174px;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    @media (min-width: 1080px) {
+        width: 490px;
+        height: 174px;
+    }
+}
+
+
+@mixin restau-card-content {
+    height: 77px;
+    display: flex;
+    align-items: center;
+    padding: 0 13px;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+@mixin restau-card-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 // Keyframes
 @keyframes fadeInAnimation {
     0% {
@@ -99,29 +176,6 @@ $dark-grey: #353535;
     }
 }
 
-
-
-// Générales
-* {
-    box-sizing: border-box;
-}
-
-html {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: Roboto;
-    @include padding-reset;
-    @include margin-reset;
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-// loader
 @keyframes vanish {
     0% {
         transform: scaleZ(1);
@@ -154,10 +208,28 @@ body {
 }
 
 
-$anim-dur: 3s;
-$anim-turn: 2;
+
+// Générales
+* {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Roboto;
+    @include padding-reset;
+    @include margin-reset;
+    display: flex;
+    flex-direction: column;
+}
 
 
+
+// loader
 .loader {
     opacity: 0.9;
     position: fixed;
@@ -166,7 +238,7 @@ $anim-turn: 2;
     background-color: #fff;
     height: 100vh;
     inset: 0;
-    z-index: 9999;
+    z-index: 1;
     transform-origin: top;
     animation: vanish 1000ms $anim-dur*$anim-turn forwards;
     @include flex-center-row;
@@ -181,7 +253,7 @@ $anim-turn: 2;
         border-radius: 50%;
         animation: spin $anim-dur infinite ease-in-out;
         z-index: 1;
-        position: absolute;
+        position: fixed;
     }
 
     &::after {
@@ -193,7 +265,7 @@ $anim-turn: 2;
         border-radius: 50%;
         animation: rev-spin $anim-dur infinite ease-in-out;
         z-index: 1;
-        position: absolute;
+        position: fixed;
     }
 
     &__txt {
@@ -205,13 +277,10 @@ $anim-turn: 2;
         z-index: 1;
         position: absolute;
     }
-
-
-
 }
 
 
-// Header
+Header
 
 .header {
     @include flex-center-row;
@@ -343,18 +412,18 @@ $anim-turn: 2;
         height: 127px;
         gap: 25px;
         @include flex-center-row;
-        padding: 0 0 0 15px;
         margin: 25px;
     }
 
         &__title {
+            width: 340px;
             font-size: 24px;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
             @include margin-reset;
             margin: 0px 0px 20px 0px;
-            padding-left: 10px;
+            padding-left: 18px;
             @media (min-width: 1080px) {
                 @include margin-reset;
                 @include padding-reset;
@@ -436,232 +505,143 @@ $anim-turn: 2;
         }
 }
 
+
 // Restaurants
 .restaurants {
-    width: 100%;
-    height: 1329.6px;
     background-color: #f6f6f6;
-    padding: 50px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 70px 0;
     @media (min-width: 1080px) {
         width: 100%;
-        height: 746.8px;
-        gap: 28px;
-        @include flex-center-column;
+        padding: 50px 180px;
+        gap: 30px;
+
+    }
+    &__title {
+        width: 340px;
+        @include margin-reset;
+        @media (min-width: 1080px) {
+            width: 1080px;
+        }
     }
 
-        &__title {
-            @include margin-reset;
-            padding: 0px 0px 0px 10px;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            @media (min-width: 1080px) {
-                width: 1080px;
-                height: 49.6px;
-                padding: 0 0 10px 10px;
-            }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        @media (min-width:1080px) {
+            @include gap-reset;
+            gap: 50px;
         }
+        
 
-        &__cards {
-            width: 100%;
-            height: 1200px;
-            @include flex-center-column;
-            @media (min-width: 1080px) {
-                width: 100%;
-                height: 600px;
-                gap: 50px;
+        &__bloc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            @media (min-width:1080px) {
+                display: flex;
+                flex-direction: row;
+                @include gap-reset;
+                gap: 100px;
             }
-            
 
-            &__bloc {
-                width: 100%;
-                height: 600px;
-                gap: 18px;
-                @include flex-center-column;
-                @media (min-width: 1080px) {
-                    width: 1080px;
-                    height: 300px;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 100px;
-                    padding: 0 10px 0 10px;
+            .card {
+                @include restaurant-card;
+        
+                .link {
+                    @include link-basic-att;
+    
+                    .bg-img {
+                        @include image-bckgrnd;
+                        padding: 20px 0 0 240px;
+                        @media (min-width: 1080px) {
+                            padding: 20px 0 0 380px;
+                        }
+    
+                            
+                        .tag {
+                            @include tag;
+                            display: flex;
+                        }
+        
+                        &--1 {
+                            background-image: url(../assets/images/restaurants/la-palette-du-gout.jpg);
+                        }
+        
+                        &--2 {
+                            background-image: url(../assets/images/restaurants/la-note-enchante.jpg);
+                        }
+        
+                        &--3 {
+                            background-image: url(../assets/images/restaurants/a-la-française.jpg);
+                        }
+        
+                        &--4 {
+                            background-image: url(../assets/images/restaurants/le-delice-des-sens.jpg);
+                        }
+                    }
+    
+                    .content {
+                        @include restau-card-content;
+    
+                        .txt {
+                            width: 85%;
+                            @include restau-card-txt;
+                            @media (min-width:1080px) {
+                                width: 90%;
+                            }
+    
+                            .name {
+                                @include margin-reset;
+                            }
+        
+                            .location { 
+                                @include margin-reset;
+                            }
+                        }
+                    }
+    
+                    .favorite {
+                        @include favorite;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
+                        &:hover {
+                            .heart--default {
+                                opacity: 0;
+                            }
+    
+                            .heart--liked {
+                                opacity: 1;
+                            }
+                        }
+    
+                        &:not(:hover) {
+                            .heart--default {
+                                opacity: 1;
+                            }
+    
+                            .heart--liked {
+                                opacity: 0;
+                            }
+                        }
+    
+                        .heart {
+                            @include heart;
+                            align-self: center;
+                        }
+                    }
                 }
-
-                    &--border {
-                        margin: 0 0 -32px 0;
-                        @media (min-width: 1080px) {
-                            @include margin-reset;
-                        }
-                    }
-    
-                    .card {
-                        width: 340px;
-                        height: fit-content;
-                        border-radius: 15px;
-                        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
-                        @media (min-width: 1080px) {
-                            width: 45.3335%;
-                            height: fit-content;
-                        }
-    
-                            &--margin {
-                                margin-bottom: 20px;
-                                @media (min-width: 1080px) {
-                                    @include margin-reset;
-                                }
-                            }
-    
-                            &__link {
-                                @include link-basic-att;
-                                width: 100%;
-                                height: 200px;
-                                @media (min-width: 1080px) {
-                                    width: 100%;
-                                }
-    
-                                    &__tag {
-                                        width: 88px;
-                                        height: 28px;
-                                        color: #008766;
-                                        font-size: 14px;
-                                        font-weight: 500;
-                                        @include flex-center-row;
-                                        background-color: #99e2d0;
-                                        border: 1px solid #99e2d0;
-                                        border-radius: 2px;
-                                        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-                                        margin: 0px 0px -50px 230px;
-                                        position: sticky;
-                                        @media (min-width: 1080px) {
-                                            @include margin-reset;
-                                            margin: 0 0 -50px 375px;
-                                        }
-                                    }
-    
-                                    &__img {
-                                        width: 100%;
-                                        height: 200px;
-                                        object-fit: cover;
-                                        border-radius: 15px;
-                                    }
-    
-                            }
-    
-                            &__content {
-                                display: flex;
-    
-                                    &__txt {
-                                        width: 85%;
-                                        display: flex;
-                                        align-items: center;
-                                        padding: 0px 0px 10px 13px;
-                                        @media (min-width:1080px) {
-                                            width: 90%;
-                                        }
-    
-                                            &__link {
-                                                @include link-basic-att;
-    
-                                                &__name {
-                                                    @include margin-reset;
-                                                    margin: 10px 0 5px 0;
-                                                    color: #000;
-                                                    font-size: 18px;
-                                                    font-style: normal;
-                                                    font-weight: 700;
-                                                    line-height: normal;
-                                                }
-        
-                                                &__location {
-                                                    @include margin-reset;
-                                                    color: #000;
-                                                    font-size: 17px;
-                                                    font-style: normal;
-                                                    font-weight: 300;
-                                                    line-height: normal;
-                                                }
-        
-                                            }
-    
-                                    }
-    
-                                    &__fav {
-                                        display: flex;
-                                        align-items: center;
-                                        position: relative;
-                                        z-index: 1;
-                                        &:active {
-                                            & .card__content__fav__icon--default {
-                                                opacity: 0;
-                                            }
-
-                                            & .card__content__fav__icon--liked {
-                                                opacity:1;
-                                            }
-                                        }
-
-                                        &:not(:active) {
-                                            & .card__content__fav__icon--default {
-                                                opacity: 1;
-                                            }
-
-                                            & .card__content__fav__icon--liked {
-                                                opacity:0;
-                                            }
-                                        }
-
-                                        @media (min-width: 1080px) {
-                                            &:hover {
-                                                & .card__content__fav__icon--default {
-                                                    opacity: 0;
-                                                }
-    
-                                                & .card__content__fav__icon--liked {
-                                                    opacity:1;
-                                                }
-                                            }
-    
-                                            &:not(:hover) {
-                                                & .card__content__fav__icon--default {
-                                                    opacity: 1;
-                                                }
-    
-                                                & .card__content__fav__icon--liked {
-                                                    opacity:0;
-                                                }
-                                            }
-
-                                        }
-
-                                        &__icon--default {
-                                            position: absolute;
-                                            z-index: -1;
-                                            opacity: 1;
-                                            transition: opacity 400ms;
-                                            
-                                        }
-
-                                        &__icon--liked {
-                                            position: absolute;
-                                            z-index: -1;
-                                            opacity: 0;
-                                            transition: opacity 400ms;
-                                        }
-
-                                            
-    
-                                            
-                                        
-                                    }
-                            }
-                    }
             }
     
-
         }
 
+    }
 }
 
 // Footer
