@@ -159,7 +159,6 @@ Header .header__location__txt {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
   }
 }
 .main__header {
@@ -169,17 +168,11 @@ Header .header__location__txt {
   align-items: center;
   width: 100%;
   height: 304px;
-  padding: 50px 0 50px 0;
   background: #f6f6f6;
 }
 @media (min-width: 1080px) {
   .main__header {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 179px;
+    height: 239px;
     gap: 18px;
   }
 }
@@ -198,7 +191,8 @@ Header .header__location__txt {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 29.6px;
+    font-size: 40px;
+    height: 47px;
   }
 }
 .main__header__subtitle {
@@ -219,7 +213,7 @@ Header .header__location__txt {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
+    font-size: 18px;
   }
 }
 .main__header__btn {
@@ -253,6 +247,7 @@ Header .header__location__txt {
   background: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 @media (min-width: 1080px) {
   .functioning {
@@ -270,7 +265,7 @@ Header .header__location__txt {
   line-height: normal;
   margin: 0;
   margin: 0px 0px 20px 0px;
-  padding-left: 18px;
+  padding-left: 20px;
 }
 @media (min-width: 1080px) {
   .functioning__title {
@@ -373,30 +368,34 @@ Header .header__location__txt {
 }
 
 .restaurants {
+  height: 1190px;
   background: #f6f6f6;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 70px 0;
 }
 @media (min-width: 1080px) {
   .restaurants {
     width: 100%;
-    padding: 50px 180px;
-    gap: 30px;
+    height: 668px;
+    padding: 30px 180px;
   }
 }
 .restaurants__title {
   width: 340px;
+  padding-left: 3px;
   margin: 0;
 }
 @media (min-width: 1080px) {
   .restaurants__title {
     width: 1080px;
+    padding: 0;
   }
 }
 .restaurants__cards {
+  height: 1058px;
   display: flex;
   flex-direction: column;
   gap: 18px;

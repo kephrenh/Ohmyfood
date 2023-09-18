@@ -336,19 +336,16 @@ Header
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        // gap: 30px;
     }
 
         &__header {
             @include flex-center-column;
             width: 100%;
             height: 304px;
-            padding: 50px 0 50px 0;
             background: #f6f6f6;
             @media (min-width: 1080px) {
-                @include padding-reset;
-                @include flex-center-column;
-                height: 179px;
+                height: 239px;
                 gap: 18px;
             }
 
@@ -363,7 +360,8 @@ Header
                     @include margin-reset;
                     @media (min-width: 1080px) {
                         @include flex-center-row;
-                        height: 29.6px;
+                        font-size: 40px;
+                        height: 47px;
                     }
                 }
 
@@ -381,7 +379,7 @@ Header
                     @media (min-width: 1080px) {
                         @include margin-reset;
                         @include flex-center-row;
-                        height: 20px;
+                        font-size: 18px;
                     }
                 }
 
@@ -408,6 +406,7 @@ Header
     background: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     @media (min-width: 1080px) {
         width: 100%;
         height: 228px;
@@ -423,7 +422,7 @@ Header
             line-height: normal;
             @include margin-reset;
             margin: 0px 0px 20px 0px;
-            padding-left: 18px;
+            padding-left: 20px;
             @media (min-width: 1080px) {
                 @include margin-reset;
                 @include padding-reset;
@@ -511,27 +510,28 @@ Header
 
 // Restaurants
 .restaurants {
+    height: 1190px;
     background: #f6f6f6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center-column;
     gap: 20px;
-    padding: 70px 0;
     @media (min-width: 1080px) {
         width: 100%;
-        padding: 50px 180px;
-        gap: 30px;
+        height: 668px;
+        padding: 30px 180px;
 
     }
     &__title {
         width: 340px;
+        padding-left: 3px;
         @include margin-reset;
         @media (min-width: 1080px) {
             width: 1080px;
+            @include padding-reset;
         }
     }
 
     &__cards {
+        height: 1058px;
         display: flex;
         flex-direction: column;
         gap: 18px;
