@@ -1,10 +1,20 @@
-@keyframes menus {
+@keyframes anim-cards {
   0% {
-    transform: translateY(-20%);
+    transform: translateY(-25%);
     opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes anim-cards-desktop {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -198,25 +208,6 @@ body {
   flex-direction: column;
   gap: 12px;
   padding: 0 0 40px 0;
-  animation: menus 1000ms ease-in-out;
-}
-.menu--1 {
-  animation-delay: 333.3333333333ms;
-}
-.menu--2 {
-  animation-delay: 666.6666666667ms;
-}
-.menu--3 {
-  animation-delay: 1000ms;
-}
-.menu--delay1 {
-  animation-delay: 100ms;
-}
-.menu--delay2 {
-  animation-delay: 200ms;
-}
-.menu--delay3 {
-  animation-delay: 300ms;
 }
 @media (min-width: 1055px) {
   .menu {
@@ -254,12 +245,42 @@ body {
   background: white;
   box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  animation: anim-cards 1000ms ease-in-out both;
 }
 @media (min-width: 1055px) {
   .menu__card {
     width: 604px;
-    transition: all 1000ms;
   }
+}
+.menu__card--1 {
+  animation-delay: 100ms;
+}
+.menu__card--2 {
+  animation-delay: 200ms;
+}
+.menu__card--3 {
+  animation-delay: 300ms;
+}
+.menu__card--4 {
+  animation-delay: 400ms;
+}
+.menu__card--5 {
+  animation-delay: 500ms;
+}
+.menu__card--6 {
+  animation-delay: 600ms;
+}
+.menu__card--7 {
+  animation-delay: 700ms;
+}
+.menu__card--8 {
+  animation-delay: 800ms;
+}
+.menu__card--9 {
+  animation-delay: 900ms;
+}
+.menu__card--10 {
+  animation-delay: 1000ms;
 }
 .menu__card:hover .menu__card__select {
   margin-right: 0;
@@ -315,7 +336,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-right: -59px;
-  transition: all 1000ms;
+  transition: all 1000ms ease-out;
 }
 .menu__card__select__icon {
   color: #99e2d0;
