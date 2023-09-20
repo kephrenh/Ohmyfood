@@ -7,8 +7,6 @@ $grey-tint: #7e7e7e;
 $dark-grey: #353535;
 $tag: #008766;
 $card-bckgrnd: #fff;
-$anim-dur: 3s;
-$anim-turn: 2;
 
 
 // Mixins
@@ -166,17 +164,7 @@ $anim-turn: 2;
 }
 
 // Keyframes
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes vanish {
+@keyframes loader {
     0% {
         transform: scaleZ(1);
     }
@@ -217,11 +205,6 @@ $anim-turn: 2;
 html {
     padding: 0;
     margin: 0;
-    // max-width: 375px;
-    // @media (min-width: 1080px) {
-    //     max-width: 1440px;
-    //     @include flex-center-column;
-    // }
 }
 
 body {
@@ -235,6 +218,8 @@ body {
 
 
 // loader
+$anim-dur: 2500ms;
+
 .loader {
     opacity: 0.9;
     position: fixed;
@@ -245,7 +230,7 @@ body {
     inset: 0;
     z-index: 9999;
     transform-origin: top;
-    animation: vanish 1000ms $anim-dur*$anim-turn forwards;
+    animation: loader 500ms $anim-dur forwards;
     @include flex-center-row;
 
 

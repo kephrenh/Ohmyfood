@@ -1,13 +1,5 @@
 @charset "UTF-8";
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes vanish {
+@keyframes loader {
   0% {
     transform: scaleZ(1);
   }
@@ -59,7 +51,7 @@ body {
   inset: 0;
   z-index: 9999;
   transform-origin: top;
-  animation: vanish 1000ms 6s forwards;
+  animation: loader 500ms 2500ms forwards;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +63,7 @@ body {
   border-top: 5px solid #9356dc;
   border-right: 5px solid transparent;
   border-radius: 50%;
-  animation: spin 3s infinite ease-in-out;
+  animation: spin 2500ms infinite ease-in-out;
   z-index: 1;
   position: fixed;
 }
@@ -82,7 +74,7 @@ body {
   border-top: 5px solid #ff79da;
   border-right: 5px solid transparent;
   border-radius: 50%;
-  animation: rev-spin 3s infinite ease-in-out;
+  animation: rev-spin 2500ms infinite ease-in-out;
   z-index: 1;
   position: fixed;
 }
