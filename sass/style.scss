@@ -285,6 +285,12 @@ Header
             height: 63px;
             padding: 14px 89px 13px 89px;
             background: #fff;
+            @media (min-width:376px) {
+                @include flex-center-row;
+            }
+            // @media (min-width:774px) {
+            //     @include flex-center-row;
+            // }
             @media (min-width: 1080px) {
                 height: 96px;
                 @include padding-reset;
@@ -399,6 +405,9 @@ Header
     justify-content: center;
     align-items: center;
     transition: all 400ms;
+    @media (min-width:774px) {
+        height: 228px;
+    }
     @media (min-width: 1080px) {
         width: 100%;
         height: 228px;
@@ -415,6 +424,11 @@ Header
             @include margin-reset;
             margin: 0px 0px 20px 0px;
             padding-left: 3px;
+            @media (min-width:774px) {
+                width: 774px;
+                @include padding-reset;
+                padding-left: 25px;
+            }
             @media (min-width: 1080px) {
                 @include margin-reset;
                 @include padding-reset;
@@ -427,6 +441,14 @@ Header
             display: flex;
             flex-wrap: wrap;
             gap: 24.94px;
+            @media (min-width:376px) {
+                justify-content: center;
+            }
+            @media (min-width:774px) {
+                flex-wrap: nowrap;
+                @include gap-reset;
+                gap: 15px;
+            }
             @media (min-width: 1080px) {
                 width: 1080px;
                 height: 72.3833px;
@@ -445,6 +467,9 @@ Header
                         @include flex-center-row;
                         margin-left: 20px;
                         position: sticky;
+                        @media (min-width:774px) {
+                            @include margin-reset;
+                        }
                         @media (min-width: 1080px) {
                             @include margin-reset;
                         }
@@ -454,13 +479,24 @@ Header
                         @include tertiary-btn;
                         @include flex-center-row;
                         margin: 0 20px 0 -12px;
-                        @media (min-width: 1080px) {
+                        @media (min-width: 774px) {
+                            width: 220px;
                             margin-right: 0;
+                        }
+
+                        @media (min-width: 1080px) {
+                            width: 322.486px;
+                            margin-right: 0;
+                            justify-content: flex-start;
                         }
                         
     
                             .fa-solid {
                                 margin-right: 27px;
+                                @media (min-width:774px) {
+                                    margin: 0 0 0 20px;
+                                    @include flex-center-row;
+                                }
                                 @media (min-width: 1080px) {
                                     @include flex-center-row;
                                 }
@@ -490,6 +526,9 @@ Header
                                 font-size: 16px;
                                 font-weight: 500;
                                 text-align: left;
+                                @media (min-width:774px) {
+                                    text-align: center;
+                                }
                             }
     
                     }
@@ -507,6 +546,9 @@ Header
     @include flex-center-column;
     gap: 20px;
     transition: all 400ms;
+    @media (min-width:774px) {
+        height: 700px;
+    }
     @media (min-width: 1080px) {
         width: 100%;
         height: 668px;
@@ -517,6 +559,10 @@ Header
         width: 340px;
         padding-left: 3px;
         @include margin-reset;
+        @media (min-width:774px) {
+            width: 774px;
+            padding-left: 25px;
+        }
         @media (min-width: 1080px) {
             width: 1080px;
             @include padding-reset;
@@ -528,6 +574,15 @@ Header
         display: flex;
         flex-direction: column;
         gap: 18px;
+
+        @media (min-width:774px) {
+            width: 100%;
+            height: 550px;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
         @media (min-width:1080px) {
             @include gap-reset;
             gap: 50px;
@@ -539,6 +594,10 @@ Header
             flex-direction: column;
             align-items: center;
             gap: 18px;
+            @media (min-width:774px) {
+                flex-direction: row;
+                gap: 40px;
+            }
             @media (min-width:1080px) {
                 display: flex;
                 flex-direction: row;

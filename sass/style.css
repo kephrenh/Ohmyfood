@@ -108,6 +108,13 @@ Header .header__logo {
   padding: 14px 89px 13px 89px;
   background: #fff;
 }
+@media (min-width: 376px) {
+  Header .header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media (min-width: 1080px) {
   Header .header__logo {
     height: 96px;
@@ -243,6 +250,11 @@ Header .header__location__txt {
   align-items: center;
   transition: all 400ms;
 }
+@media (min-width: 774px) {
+  .functioning {
+    height: 228px;
+  }
+}
 @media (min-width: 1080px) {
   .functioning {
     width: 100%;
@@ -261,6 +273,13 @@ Header .header__location__txt {
   margin: 0px 0px 20px 0px;
   padding-left: 3px;
 }
+@media (min-width: 774px) {
+  .functioning__title {
+    width: 774px;
+    padding: 0;
+    padding-left: 25px;
+  }
+}
 @media (min-width: 1080px) {
   .functioning__title {
     margin: 0;
@@ -273,6 +292,18 @@ Header .header__location__txt {
   display: flex;
   flex-wrap: wrap;
   gap: 24.94px;
+}
+@media (min-width: 376px) {
+  .functioning__steps {
+    justify-content: center;
+  }
+}
+@media (min-width: 774px) {
+  .functioning__steps {
+    flex-wrap: nowrap;
+    gap: 0;
+    gap: 15px;
+  }
 }
 @media (min-width: 1080px) {
   .functioning__steps {
@@ -306,6 +337,11 @@ Header .header__location__txt {
   margin-left: 20px;
   position: sticky;
 }
+@media (min-width: 774px) {
+  .functioning__steps__step__num {
+    margin: 0;
+  }
+}
 @media (min-width: 1080px) {
   .functioning__steps__step__num {
     margin: 0;
@@ -323,13 +359,29 @@ Header .header__location__txt {
   align-items: center;
   margin: 0 20px 0 -12px;
 }
+@media (min-width: 774px) {
+  .functioning__steps__step__btn {
+    width: 220px;
+    margin-right: 0;
+  }
+}
 @media (min-width: 1080px) {
   .functioning__steps__step__btn {
+    width: 322.486px;
     margin-right: 0;
+    justify-content: flex-start;
   }
 }
 .functioning__steps__step__btn .fa-solid {
   margin-right: 27px;
+}
+@media (min-width: 774px) {
+  .functioning__steps__step__btn .fa-solid {
+    margin: 0 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 @media (min-width: 1080px) {
   .functioning__steps__step__btn .fa-solid {
@@ -360,6 +412,11 @@ Header .header__location__txt {
   font-weight: 500;
   text-align: left;
 }
+@media (min-width: 774px) {
+  .functioning__steps__step__btn__txt {
+    text-align: center;
+  }
+}
 
 .restaurants {
   height: 1190px;
@@ -370,6 +427,11 @@ Header .header__location__txt {
   align-items: center;
   gap: 20px;
   transition: all 400ms;
+}
+@media (min-width: 774px) {
+  .restaurants {
+    height: 700px;
+  }
 }
 @media (min-width: 1080px) {
   .restaurants {
@@ -383,6 +445,12 @@ Header .header__location__txt {
   padding-left: 3px;
   margin: 0;
 }
+@media (min-width: 774px) {
+  .restaurants__title {
+    width: 774px;
+    padding-left: 25px;
+  }
+}
 @media (min-width: 1080px) {
   .restaurants__title {
     width: 1080px;
@@ -395,6 +463,15 @@ Header .header__location__txt {
   flex-direction: column;
   gap: 18px;
 }
+@media (min-width: 774px) {
+  .restaurants__cards {
+    width: 100%;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
 @media (min-width: 1080px) {
   .restaurants__cards {
     gap: 0;
@@ -406,6 +483,12 @@ Header .header__location__txt {
   flex-direction: column;
   align-items: center;
   gap: 18px;
+}
+@media (min-width: 774px) {
+  .restaurants__cards__bloc {
+    flex-direction: row;
+    gap: 40px;
+  }
 }
 @media (min-width: 1080px) {
   .restaurants__cards__bloc {
