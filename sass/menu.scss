@@ -78,6 +78,7 @@ $anim-delay: $anim-dur / $num-cards;
     border-radius: 15.043px;
     background: white;
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
+    
     @media (min-width:1055px) {
         width: 604px;
     }
@@ -143,8 +144,7 @@ body {
     @media (min-width: 1055px) {
         @include gap-reset;
         @include padding-reset;
-        padding: 30px 621px 32.14px 17px;
-        gap: 572px;
+        padding: 30px 0 32.14px 17px;
     }
 
         &__link {
@@ -163,6 +163,12 @@ body {
             display: flex;
             justify-content: flex-start;
             width: 204px;
+            @media (min-width:376px) {
+                width: 90%;
+                justify-content: center;
+            }
+
+
 
                 &__img {
                     width: 162px;
@@ -181,6 +187,9 @@ body {
     flex-direction: column;
     align-items: center;
     background: $light-grey;
+    @media (min-width:376px) {
+        width: 100%;
+    }
     @media (min-width: 1055px) {
         width: 100%;
         background: white;
@@ -208,10 +217,14 @@ body {
             justify-content: flex-start;
             border-radius: 40px 40px 0 0;
             background-color: $light-grey;
-            width: 340px;
+            width: 341px;
             height: 50px;
             padding: 40px 0px 40px 10px;
             white-space: nowrap;
+            @media (min-width:376px) {
+                @include flex-center-row;
+                width: 95%;
+            }
             @media (min-width: 1055px) {
                 width: 1055px;
                 @include margin-reset;
@@ -220,7 +233,7 @@ body {
             }
 
             &__txt {
-                width: 70%;
+                width: 250px;
                 height: 100%;
                 font-family: Shrikhand;
                 font-size: 28px;
@@ -231,6 +244,7 @@ body {
                 justify-content: flex-start;
                 align-items: center;
                 @include margin-reset;
+                
                 @media (min-width: 1055px) {
                     @include padding-reset;
                     width: 27%;
@@ -311,6 +325,11 @@ body {
     flex-direction: column;
     gap: 12px;
     padding: 0 0 40px 0;
+    @media (min-width:376px) {
+        width: 100%;
+        max-width: 1055px;
+        align-items: center;
+    }
     @media (min-width: 1055px) {
         width: 1055px;
         background-color: $light-grey;
@@ -326,6 +345,10 @@ body {
         line-height: normal;
         text-transform: uppercase;
         margin: 0 0 5px 0;
+        @media (min-width:376px) {
+            width: 100%;
+            max-width: 604px;
+        }
         @media (min-width:1055px) {
             width: 604px;
         }
@@ -348,6 +371,11 @@ body {
 
         &:hover .menu__card__select {
             margin-right: 0;
+        }
+
+        @media (min-width:376px) {
+            width: 90%;
+            max-width: 604px;
         }
 
         &__title {
